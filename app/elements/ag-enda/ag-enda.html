@@ -1,6 +1,6 @@
 <!--
 A comment describing this element
-  
+
 Example:
 
     <my-elem></my-elem>
@@ -31,13 +31,14 @@ Example:
 			}
 		</style>
 
-	<paper-tabs 
+	<paper-tabs
 		selected="{{eventType}}"
 		on-iron-select="_updateDisplayed">
 	    <paper-tab>Conferencia</paper-tab>
 	    <paper-tab>Taller</paper-tab>
+      <paper-tab>Videojuegos</paper-tab>
 	</paper-tabs>
-	<paper-tabs 
+	<paper-tabs
 		selected="{{day}}"
 		on-iron-select="_updateDisplayed">
 	    <paper-tab>Lunes</paper-tab>
@@ -49,12 +50,12 @@ Example:
 	<template is="dom-repeat"
               items="{{displayed}}"
               as="evento">
-      
+
       <ev-ento
         evento="{{evento}}"></ev-ento>
     </template>
 
-		
+
 	</template>
 	<script>
 Polymer({
