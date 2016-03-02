@@ -8,7 +8,7 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 <link rel="import" href="../../bower_components/firebase-element/firebase-auth.html">
-<link rel="import" href="../../bower_components/firebase-element/firebase-collection.html">
+<link rel="import" href="../../bower_components/firebase-element/firebase-document.html">
 <dom-module id="x-login">
   <template>
     <firebase-auth 
@@ -20,56 +20,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       on-error="errorHandler" 
       on-user-created="userSuccessHandler" 
       on-password-changed="userSuccessHandler" 
-      on-password-reset="userSuccessHandler" on-user-removed="userSuccessHandler"></firebase-auth>
-
-     <firebase-collection
-            location="{{location}}"
-            data="{{firebaseData}}"
+      on-password-reset="userSuccessHandler" 
+      on-user-removed="userSuccessHandler"></firebase-auth>
+     <firebase-document
+            location="{{userLocation}}"
+            data="{{fbadminStatus}}"
             on-firebase-value="_firebaseLoaded">
-      </firebase-collection>
-     
-     
-
-    Firebase location:
-    <input value="{{location}}" size="40" disabled>
-    <br>
-
-
-    Login params (JSON):
-    <input value="{{params::input}}" id="params">
-    <em>Required by some provider types</em>
-    <br>
-
-    <div hidden$="{{computePasswordHidden(provider)}}">
-      <br><em>Password-specific options:</em><br>
-      <input placeholder="email" value="{{email::input}}">
-      <input placeholder="password" value="{{password::input}}">
-      <button on-tap="createUserHandler" disabled$="{{computeCreateUserDisabled(email, password)}}">Create user</button>
-      <br>
-      <input placeholder="new password" value="{{newPassword::input}}">
-      <button on-tap="changePasswordHandler" disabled$="{{computeChangePasswordDisabled(email, password, newPassword)}}">Change password</button>
-      <br>
-      <button on-tap="resetPasswordHandler" disabled$="{{computeResetPasswordDisabled(email, password)}}">Reset password</button>
-      <button on-tap="removeUserHandler" disabled$="{{computeRemoveUserDisabled(email, password)}}">Remove user</button>
-    </div>
-    <br>
-    <div id="message">[[message]]</div>
-    <br>
+    </firebase-document>
 
     <button on-tap="login" hidden$="{{computeLoginHidden(statusKnown, user)}}">Login</button>
     <button on-tap="logout" hidden$="{{computeLogoutHidden(statusKnown, user)}}">Logout</button>
 
+    <div hidden$="{{computeLogoutHidden(statusKnown, user)}}">
     <h3>Login status:</h3>
-    <p>{{computeLoginStatus(statusKnown, user)}}</p>
+
+    Hi {{user.google.displayName}}! You are currently {{adminStatus}} admin.
+    You can request managerial access using this id {{user.uid}}
 
     <p><img src="{{user.google.profileImageURL}}"></p>
-
-    <h3>Admin status:</h3>
-    <p>{{adminStatus}}</p>
-
-    <h3>User ID:</h3>
-    <pre>{{user.uid}}</pre>
+    </div>
   </template>
+  
 </dom-module>
 <script>
   Polymer({
@@ -93,10 +64,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       },
       user: {
         type: Object,
-        value: null
+        value: null,
+        observer: '_userChanged'
       },
       statusKnown: {
         type: Boolean
+      },
+      adminStatus: {
+        type: Boolean,
+        value: false
       }
     },
     login: function() {
@@ -134,9 +110,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     removeUserHandler: function(e) {
       this.$.firebaseLogin.removeUser(this.email, this.password);
     },
-    computePasswordHidden: function(provider) {
-      return provider !== 'password';
-    },
     computeCreateUserDisabled: function(email, password) {
       return !email || !password;
     },
@@ -157,7 +130,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     },
     computeLoginStatus: function(statusKnown, user) {
       if (statusKnown && user) {
-        console.log(user);
         return 'Logged in';
       }
       if (statusKnown) {
@@ -165,16 +137,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
       return 'Unknown (checking status...)';
     },
-    computeAdminStatus: function(statusKnown, user){
-      if (statusKnown && user) {
-        return true;
-      } else {
-        return false;
-      }
+    _firebaseLoaded: function(data){
+      this.adminStatus = this.fbadminStatus;
     },
-    _firebaseLoaded: function(){
-      console.log("done");
-      console.log(this.firebaseData);
+    _userChanged: function(user) {
+      if (user) {
+        this.userLocation = [this.location, 'admins', this.user.uid, 'isAdmin'].join('/');
+      } else {
+        this.adminStatus = false;
+      }
     }
   });
 </script>
