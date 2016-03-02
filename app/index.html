@@ -77,7 +77,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <paper-menu attr-for-selected="data-route" selected="[[route]]">
           <a data-route="home" href="{{baseUrl}}">
             <iron-icon icon="home"></iron-icon>
-            <span>Home</span>
+            <span>Agenda</span>
           </a>
 
           <a data-route="como-llegar" href="{{baseUrl}}como-llegar">
@@ -90,9 +90,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <span>Hackathon</span>
           </a>
 
-          <a data-route="recogida-cv" href="{{baseUrl}}recogida-cv">
-            <iron-icon icon="mail"></iron-icon>
-            <span>¡Déjanos tu CV!</span>
+          <a data-route="sponsors" href="{{baseUrl}}sponsors">
+            <iron-icon icon="thumb-up"></iron-icon>
+            <span>Sponsors</span>
           </a>
         </paper-menu>
       </paper-scroll-header-panel>
@@ -137,11 +137,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             </section>
 
-
-
             <section data-route="como-llegar">
-              <p>La E.T.S. Ingeniería Informática se encuentra en el Campus de Teatinos de la Universidad de Málaga, junto al Hospital Clínico Universitario Virgen de la Victoria. Las conferencias, los talleres y las sesiones de juegos tendrán lugar en el edificio de la escuela; que cuenta con cafetería y zonas de aparcamiento.<br><br>
-              Se puede venir fácilmente en autobús desde el centro de la ciudad en las <a href="http://www.emtmalaga.es/emt-classic/home.html">líneas 8, 11 o 25 de la EMT</a>, que tienen parada en la Alameda Principal. A ella es rápido llegar desde la <a href="http://www.estabus.emtsam.es/">Estación de Autobuses</a>, la estación de tren Málaga-María Zambrano o la estación Málaga Centro-Alameda, donde paran las <a href="http://www.renfe.com/viajeros/cercanias/malaga/">líneas C-1 y C-2 de Cercanías</a>.<br><br>También es posible venir mediante la <a href="http://metromalaga.es/">línea 1 del Metro de Málaga</a> (parada Clínico), que tiene intercambio en la estación Perchel con la Estación de tren Málaga-María Zambrano y la <a href="http://www.estabus.emtsam.es/">Estación de Autobuses</a>.</p>
+
+              <paper-material>
+                <p>La E.T.S. Ingeniería Informática se encuentra en el Campus de Teatinos de la Universidad de Málaga, junto al Hospital Clínico Universitario Virgen de la Victoria. Las conferencias, los talleres y las sesiones de juegos tendrán lugar en el edificio de la escuela; que cuenta con cafetería y zonas de aparcamiento.<br><br>
+                Se puede venir fácilmente en autobús desde el centro de la ciudad en las <a href="http://www.emtmalaga.es/emt-classic/home.html">líneas 8, 11 o 25 de la EMT</a>, que tienen parada en la Alameda Principal. A ella es rápido llegar desde la <a href="http://www.estabus.emtsam.es/">Estación de Autobuses</a>, la estación de tren Málaga-María Zambrano o la estación Málaga Centro-Alameda, donde paran las <a href="http://www.renfe.com/viajeros/cercanias/malaga/">líneas C-1 y C-2 de Cercanías</a>.<br><br>
+                También es posible venir mediante la <a href="http://metromalaga.es/">línea 1 del Metro de Málaga</a> (parada Clínico), que tiene intercambio en la estación Perchel con la Estación de tren Málaga-María Zambrano y la <a href="http://www.estabus.emtsam.es/">Estación de Autobuses</a>.</p>
+              </paper-material>
               <google-map latitude="36.715233" longitude="-4.477952" fit-to-markers style="height:600px;" zoom=16>
                 <google-map-marker latitude="36.715233" longitude="-4.477952"
                     draggable="true" title="Hackers Week"></google-map-marker>
@@ -160,14 +162,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 </paper-material>
             </section>
 
-            <section data-route="user-info">
-              <paper-material elevation="1">
-                <h2 class="page-title">User: {{params.name}}</h2>
-                <div>This is {{params.name}}'s section</div>
-              </paper-material>
-            </section>
+            <section data-route="sponsors">
+              <iron-image src="images/accenture.png" width="500" height="300" sizing="cover"></iron-image>
+              <img src="images/Microsoft.png" width="700" height="300" sizing="cover"></img>
+              <img src="images/coritel.jpg" width="700" height="300" sizing="cover"></img>
+              <iron-image src="images/gdgmalaga.png" width="700" height="300" sizing="cover"></iron-image>
 
-            <section data-route="recogida-cv">
               <paper-material elevation="1">
                 <h2 class="page-title">¡Coritel está recogiendo currículums!</h2>
                 <p><i>Coritel</i> es una empresa del Grupo Accenture especializada en la prestación de Servicios Tecnológicos específicos
