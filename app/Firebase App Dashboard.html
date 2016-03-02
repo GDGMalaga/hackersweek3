@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)https://hackers-week.firebaseio.com/?page=Security -->
+<html class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths wf-proximanova-n3-active wf-proximanova-n4-active wf-proximanova-n6-active wf-proximanova-n7-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Firebase App Dashboard</title>
+  <meta name="description" content="Firebase App Dashboard">
+  <meta name="author" content="Firebase, Inc.">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link href="./Firebase App Dashboard_files/forge.head-8bf6c12c.css" rel="stylesheet"><link href="./Firebase App Dashboard_files/fonts.css" rel="stylesheet"><script type="text/javascript" async="" src="./Firebase App Dashboard_files/ga.js"></script><script src="./Firebase App Dashboard_files/aem3dbj.js"></script><script src="./Firebase App Dashboard_files/forge.head.app-b1d15c23.js"></script><script type="text/javascript" async="" src="./Firebase App Dashboard_files/analytics.min.js"></script><script src="./Firebase App Dashboard_files/forge.head.vendor-5f926ed2.js"></script><script src="./Firebase App Dashboard_files/ace.js"></script><script type="text/javascript">
+    var FirebaseForge = {
+      constants: {
+        web_root :  "https://www.firebase.com",
+        auth_root:  "https://auth.firebase.com"
+      }
+    };
+  </script>
+
+  <!-- SCRIPTS -->
+  <script type="text/javascript" src="./Firebase App Dashboard_files/forge.head.loader.js"></script>
+
+<style id="ace_editor">.ace_editor {position: relative;overflow: hidden;font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;direction: ltr;}.ace_scroller {position: absolute;overflow: hidden;top: 0;bottom: 0;background-color: inherit;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;cursor: text;}.ace_content {position: absolute;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;min-width: 100%;}.ace_dragging .ace_scroller:before{position: absolute;top: 0;left: 0;right: 0;bottom: 0;content: '';background: rgba(250, 250, 250, 0.01);z-index: 1000;}.ace_dragging.ace_dark .ace_scroller:before{background: rgba(0, 0, 0, 0.01);}.ace_selecting, .ace_selecting * {cursor: text !important;}.ace_gutter {position: absolute;overflow : hidden;width: auto;top: 0;bottom: 0;left: 0;cursor: default;z-index: 4;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;}.ace_gutter-active-line {position: absolute;left: 0;right: 0;}.ace_scroller.ace_scroll-left {box-shadow: 17px 0 16px -16px rgba(0, 0, 0, 0.4) inset;}.ace_gutter-cell {padding-left: 19px;padding-right: 6px;background-repeat: no-repeat;}.ace_gutter-cell.ace_error {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABOFBMVEX/////////QRswFAb/Ui4wFAYwFAYwFAaWGAfDRymzOSH/PxswFAb/SiUwFAYwFAbUPRvjQiDllog5HhHdRybsTi3/Tyv9Tir+Syj/UC3////XurebMBIwFAb/RSHbPx/gUzfdwL3kzMivKBAwFAbbvbnhPx66NhowFAYwFAaZJg8wFAaxKBDZurf/RB6mMxb/SCMwFAYwFAbxQB3+RB4wFAb/Qhy4Oh+4QifbNRcwFAYwFAYwFAb/QRzdNhgwFAYwFAbav7v/Uy7oaE68MBK5LxLewr/r2NXewLswFAaxJw4wFAbkPRy2PyYwFAaxKhLm1tMwFAazPiQwFAaUGAb/QBrfOx3bvrv/VC/maE4wFAbRPBq6MRO8Qynew8Dp2tjfwb0wFAbx6eju5+by6uns4uH9/f36+vr/GkHjAAAAYnRSTlMAGt+64rnWu/bo8eAA4InH3+DwoN7j4eLi4xP99Nfg4+b+/u9B/eDs1MD1mO7+4PHg2MXa347g7vDizMLN4eG+Pv7i5evs/v79yu7S3/DV7/498Yv24eH+4ufQ3Ozu/v7+y13sRqwAAADLSURBVHjaZc/XDsFgGIBhtDrshlitmk2IrbHFqL2pvXf/+78DPokj7+Fz9qpU/9UXJIlhmPaTaQ6QPaz0mm+5gwkgovcV6GZzd5JtCQwgsxoHOvJO15kleRLAnMgHFIESUEPmawB9ngmelTtipwwfASilxOLyiV5UVUyVAfbG0cCPHig+GBkzAENHS0AstVF6bacZIOzgLmxsHbt2OecNgJC83JERmePUYq8ARGkJx6XtFsdddBQgZE2nPR6CICZhawjA4Fb/chv+399kfR+MMMDGOQAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: 2px center;}.ace_gutter-cell.ace_warning {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAmVBMVEX///8AAAD///8AAAAAAABPSzb/5sAAAAB/blH/73z/ulkAAAAAAAD85pkAAAAAAAACAgP/vGz/rkDerGbGrV7/pkQICAf////e0IsAAAD/oED/qTvhrnUAAAD/yHD/njcAAADuv2r/nz//oTj/p064oGf/zHAAAAA9Nir/tFIAAAD/tlTiuWf/tkIAAACynXEAAAAAAAAtIRW7zBpBAAAAM3RSTlMAABR1m7RXO8Ln31Z36zT+neXe5OzooRDfn+TZ4p3h2hTf4t3k3ucyrN1K5+Xaks52Sfs9CXgrAAAAjklEQVR42o3PbQ+CIBQFYEwboPhSYgoYunIqqLn6/z8uYdH8Vmdnu9vz4WwXgN/xTPRD2+sgOcZjsge/whXZgUaYYvT8QnuJaUrjrHUQreGczuEafQCO/SJTufTbroWsPgsllVhq3wJEk2jUSzX3CUEDJC84707djRc5MTAQxoLgupWRwW6UB5fS++NV8AbOZgnsC7BpEAAAAABJRU5ErkJggg==");background-position: 2px center;}.ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAJ0Uk5TAAB2k804AAAAPklEQVQY02NgIB68QuO3tiLznjAwpKTgNyDbMegwisCHZUETUZV0ZqOquBpXj2rtnpSJT1AEnnRmL2OgGgAAIKkRQap2htgAAAAASUVORK5CYII=");background-position: 2px center;}.ace_dark .ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAJFBMVEUAAAChoaGAgIAqKiq+vr6tra1ZWVmUlJSbm5s8PDxubm56enrdgzg3AAAAAXRSTlMAQObYZgAAAClJREFUeNpjYMAPdsMYHegyJZFQBlsUlMFVCWUYKkAZMxZAGdxlDMQBAG+TBP4B6RyJAAAAAElFTkSuQmCC");}.ace_scrollbar {position: absolute;right: 0;bottom: 0;z-index: 6;}.ace_scrollbar-inner {position: absolute;cursor: text;left: 0;top: 0;}.ace_scrollbar-v{overflow-x: hidden;overflow-y: scroll;top: 0;}.ace_scrollbar-h {overflow-x: scroll;overflow-y: hidden;left: 0;}.ace_print-margin {position: absolute;height: 100%;}.ace_text-input {position: absolute;z-index: 0;width: 0.5em;height: 1em;opacity: 0;background: transparent;-moz-appearance: none;appearance: none;border: none;resize: none;outline: none;overflow: hidden;font: inherit;padding: 0 1px;margin: 0 -1px;text-indent: -1em;-ms-user-select: text;-moz-user-select: text;-webkit-user-select: text;user-select: text;}.ace_text-input.ace_composition {background: inherit;color: inherit;z-index: 1000;opacity: 1;text-indent: 0;}.ace_layer {z-index: 1;position: absolute;overflow: hidden;white-space: pre;height: 100%;width: 100%;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;pointer-events: none;}.ace_gutter-layer {position: relative;width: auto;text-align: right;pointer-events: auto;}.ace_text-layer {font: inherit !important;}.ace_cjk {display: inline-block;text-align: center;}.ace_cursor-layer {z-index: 4;}.ace_cursor {z-index: 4;position: absolute;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;border-left: 2px solid}.ace_slim-cursors .ace_cursor {border-left-width: 1px;}.ace_overwrite-cursors .ace_cursor {border-left-width: 0;border-bottom: 1px solid;}.ace_hidden-cursors .ace_cursor {opacity: 0.2;}.ace_smooth-blinking .ace_cursor {-webkit-transition: opacity 0.18s;transition: opacity 0.18s;}.ace_editor.ace_multiselect .ace_cursor {border-left-width: 1px;}.ace_marker-layer .ace_step, .ace_marker-layer .ace_stack {position: absolute;z-index: 3;}.ace_marker-layer .ace_selection {position: absolute;z-index: 5;}.ace_marker-layer .ace_bracket {position: absolute;z-index: 6;}.ace_marker-layer .ace_active-line {position: absolute;z-index: 2;}.ace_marker-layer .ace_selected-word {position: absolute;z-index: 4;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}.ace_line .ace_fold {-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;display: inline-block;height: 11px;margin-top: -2px;vertical-align: middle;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACJJREFUeNpi+P//fxgTAwPDBxDxD078RSX+YeEyDFMCIMAAI3INmXiwf2YAAAAASUVORK5CYII=");background-repeat: no-repeat, repeat-x;background-position: center center, top left;color: transparent;border: 1px solid black;border-radius: 2px;cursor: pointer;pointer-events: auto;}.ace_dark .ace_fold {}.ace_fold:hover{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACBJREFUeNpi+P//fz4TAwPDZxDxD5X4i5fLMEwJgAADAEPVDbjNw87ZAAAAAElFTkSuQmCC");}.ace_tooltip {background-color: #FFF;background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.1));background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));border: 1px solid gray;border-radius: 1px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);color: black;max-width: 100%;padding: 3px 4px;position: fixed;z-index: 999999;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;cursor: default;white-space: pre;word-wrap: break-word;line-height: normal;font-style: normal;font-weight: normal;letter-spacing: normal;pointer-events: none;}.ace_folding-enabled > .ace_gutter-cell {padding-right: 13px;}.ace_fold-widget {-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;margin: 0 -12px 0 1px;display: none;width: 11px;vertical-align: top;background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42mWKsQ0AMAzC8ixLlrzQjzmBiEjp0A6WwBCSPgKAXoLkqSot7nN3yMwR7pZ32NzpKkVoDBUxKAAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: center;border-radius: 3px;border: 1px solid transparent;cursor: pointer;}.ace_folding-enabled .ace_fold-widget {display: inline-block;   }.ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42m3HwQkAMAhD0YzsRchFKI7sAikeWkrxwScEB0nh5e7KTPWimZki4tYfVbX+MNl4pyZXejUO1QAAAABJRU5ErkJggg==");}.ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAGCAYAAAAG5SQMAAAAOUlEQVR42jXKwQkAMAgDwKwqKD4EwQ26sSOkVWjgIIHAzPiCgaqiqnJHZnKICBERHN194O5b9vbLuAVRL+l0YWnZAAAAAElFTkSuQmCCXA==");}.ace_fold-widget:hover {border: 1px solid rgba(0, 0, 0, 0.3);background-color: rgba(255, 255, 255, 0.2);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);}.ace_fold-widget:active {border: 1px solid rgba(0, 0, 0, 0.4);background-color: rgba(0, 0, 0, 0.05);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);}.ace_dark .ace_fold-widget {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHklEQVQIW2P4//8/AzoGEQ7oGCaLLAhWiSwB146BAQCSTPYocqT0AAAAAElFTkSuQmCC");}.ace_dark .ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAH0lEQVQIW2P4//8/AxQ7wNjIAjDMgC4AxjCVKBirIAAF0kz2rlhxpAAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAHElEQVQIW2P4//+/AxAzgDADlOOAznHAKgPWAwARji8UIDTfQQAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget:hover {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);background-color: rgba(255, 255, 255, 0.1);}.ace_dark .ace_fold-widget:active {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);}.ace_fold-widget.ace_invalid {background-color: #FFB4B4;border-color: #DE5555;}.ace_fade-fold-widgets .ace_fold-widget {-webkit-transition: opacity 0.4s ease 0.05s;transition: opacity 0.4s ease 0.05s;opacity: 0;}.ace_fade-fold-widgets:hover .ace_fold-widget {-webkit-transition: opacity 0.05s ease 0.05s;transition: opacity 0.05s ease 0.05s;opacity:1;}.ace_underline {text-decoration: underline;}.ace_bold {font-weight: bold;}.ace_nobold .ace_bold {font-weight: normal;}.ace_italic {font-style: italic;}.ace_error-marker {background-color: rgba(255, 0, 0,0.2);position: absolute;z-index: 9;}.ace_highlight-marker {background-color: rgba(255, 255, 0,0.2);position: absolute;z-index: 8;}</style><style id="ace-tm">.ace-tm .ace_gutter {background: #f0f0f0;color: #333;}.ace-tm .ace_print-margin {width: 1px;background: #e8e8e8;}.ace-tm .ace_fold {background-color: #6B72E6;}.ace-tm {background-color: #FFFFFF;color: black;}.ace-tm .ace_cursor {color: black;}.ace-tm .ace_invisible {color: rgb(191, 191, 191);}.ace-tm .ace_storage,.ace-tm .ace_keyword {color: blue;}.ace-tm .ace_constant {color: rgb(197, 6, 11);}.ace-tm .ace_constant.ace_buildin {color: rgb(88, 72, 246);}.ace-tm .ace_constant.ace_language {color: rgb(88, 92, 246);}.ace-tm .ace_constant.ace_library {color: rgb(6, 150, 14);}.ace-tm .ace_invalid {background-color: rgba(255, 0, 0, 0.1);color: red;}.ace-tm .ace_support.ace_function {color: rgb(60, 76, 114);}.ace-tm .ace_support.ace_constant {color: rgb(6, 150, 14);}.ace-tm .ace_support.ace_type,.ace-tm .ace_support.ace_class {color: rgb(109, 121, 222);}.ace-tm .ace_keyword.ace_operator {color: rgb(104, 118, 135);}.ace-tm .ace_string {color: rgb(3, 106, 7);}.ace-tm .ace_comment {color: rgb(76, 136, 107);}.ace-tm .ace_comment.ace_doc {color: rgb(0, 102, 255);}.ace-tm .ace_comment.ace_doc.ace_tag {color: rgb(128, 159, 191);}.ace-tm .ace_constant.ace_numeric {color: rgb(0, 0, 205);}.ace-tm .ace_variable {color: rgb(49, 132, 149);}.ace-tm .ace_xml-pe {color: rgb(104, 104, 91);}.ace-tm .ace_entity.ace_name.ace_function {color: #0000A2;}.ace-tm .ace_heading {color: rgb(12, 7, 255);}.ace-tm .ace_list {color:rgb(185, 6, 144);}.ace-tm .ace_meta.ace_tag {color:rgb(0, 22, 142);}.ace-tm .ace_string.ace_regex {color: rgb(255, 0, 0)}.ace-tm .ace_marker-layer .ace_selection {background: rgb(181, 213, 255);}.ace-tm.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px white;border-radius: 2px;}.ace-tm .ace_marker-layer .ace_step {background: rgb(252, 255, 0);}.ace-tm .ace_marker-layer .ace_stack {background: rgb(164, 229, 101);}.ace-tm .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid rgb(192, 192, 192);}.ace-tm .ace_marker-layer .ace_active-line {background: rgba(0, 0, 0, 0.07);}.ace-tm .ace_gutter-active-line {background-color : #dcdcdc;}.ace-tm .ace_marker-layer .ace_selected-word {background: rgb(250, 250, 255);border: 1px solid rgb(200, 200, 250);}.ace-tm .ace_indent-guide {background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;}</style><style>    .error_widget_wrapper {        background: inherit;        color: inherit;        border:none    }    .error_widget {        border-top: solid 2px;        border-bottom: solid 2px;        margin: 5px 0;        padding: 10px 40px;        white-space: pre-wrap;    }    .error_widget.ace_error, .error_widget_arrow.ace_error{        border-color: #ff5a5a    }    .error_widget.ace_warning, .error_widget_arrow.ace_warning{        border-color: #F1D817    }    .error_widget.ace_info, .error_widget_arrow.ace_info{        border-color: #5a5a5a    }    .error_widget.ace_ok, .error_widget_arrow.ace_ok{        border-color: #5aaa5a    }    .error_widget_arrow {        position: absolute;        border: solid 5px;        border-top-color: transparent!important;        border-right-color: transparent!important;        border-left-color: transparent!important;        top: -5px;    }</style><style>
+.text-core{position:relative;}
+.text-core .text-wrap{background:#fff;position:absolute;}
+.text-core .text-wrap textarea,.text-core .text-wrap input{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-border-radius:0px;-moz-border-radius:0px;border-radius:0px;border:1px solid #9daccc;outline:none;resize:none;position:absolute;z-index:1;background:none;overflow:hidden;margin:0;padding:3px 5px 4px 5px;white-space:nowrap;font:11px "lucida grande",tahoma,verdana,arial,sans-serif;line-height:13px;height:auto;}
+
+.text-core .text-wrap .text-tags{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;position:absolute;width:100%;height:100%;padding:3px 35px 3px 3px;cursor:text;}
+.text-core .text-wrap .text-tags.text-tags-on-top{z-index:2;}
+.text-core .text-wrap .text-tags .text-tag{float:left;}
+.text-core .text-wrap .text-tags .text-tag .text-button{-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;position:relative;float:left;border:1px solid #9daccc;background:#e2e6f0;color:#000;padding:0px 17px 0px 3px;margin:0 2px 2px 0;cursor:pointer;height:16px;font:11px "lucida grande",tahoma,verdana,arial,sans-serif;}
+.text-core .text-wrap .text-tags .text-tag .text-button a.text-remove{position:absolute;right:3px;top:2px;display:block;width:11px;height:11px;background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAhCAYAAAAPm1F2AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAB50RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNS4xqx9I6wAAAQ5JREFUOI2dlD0WwiAQhCc8L6HHgAPoASwtSYvX8BrQxtIyveYA8RppLO1jE+LwE8lzms2yH8MCj1QoaBzH+VuUYNYMS213UlvDRamtUbXb5ZyPHuDoxwGgip3ipfvGuGzPz+vZ/coDONdzFuYCO6ramQQG0DJIE1oPBBvM6e9LqaS2FwD7FWwnVoIAsOc2Xn1jDlyd8pfPBRVOBHA8cc/3yCmQqt0jcY4LuTyAF3pOYS6wI48LAm4MUrx5JthgSQJAt5LtNgAUgEMBBIC3AL2xgo58dEPfhE9wygef89FtCeC49UwltR1pQrK2qr9vNr7uRTCBF3pOYS6wI4/zdQ8MUpxPI9hgSQL0Xyio/QBt54DzsHQx6gAAAABJRU5ErkJggg==") 0 0 no-repeat;}
+.text-core .text-wrap .text-tags .text-tag .text-button a.text-remove:hover{background-position:0 -11px;}
+.text-core .text-wrap .text-tags .text-tag .text-button a.text-remove:active{background-position:0 -22px;}
+</style><style type="text/css">.tk-proxima-nova{font-family:"proxima-nova",sans-serif;}</style><link rel="stylesheet" href="./Firebase App Dashboard_files/l" media="all"><link type="image/x-icon" rel="shortcut icon" href="https://www.firebase.com/resources/images/website/icons/favicon-production.ico"><script src="./Firebase App Dashboard_files/mode-securityrules.js"></script><script src="./Firebase App Dashboard_files/worker-securityrules.js"></script></head>
+<body><script>try{Typekit.load();}catch(e){}</script>
+
+<!-- HEADER -->
+<header id="header" class="nav-top">
+  <a class="logo content-pane-link" href="https://www.firebase.com/account/">Firebase</a>
+
+  <div class="menu menu-signup auth-public" style="display: none;">
+    <a class="button button-rounded button-flat-action" href="https://www.firebase.com/login/">Login</a>
+    <a class="button button-rounded button-flat-primary" href="https://www.firebase.com/login/">Create a Free Firebase!</a>
+  </div>
+
+
+
+  <ul class="menu menu-settings auth-required" style="display: block;">
+    <li id="menu-authed" class="dropdown dropdown-account">
+      <a class="user dropdown-toggle" data-toggle="dropdown" href="https://hackers-week.firebaseio.com/?page=Security#">
+        <img class="avatar" id="user-icon" src="./Firebase App Dashboard_files/photo.jpg">
+        <span>Account Settings</span>
+        <i class="arrow icon-arrow-down"></i>
+      </a>
+
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="https://www.firebase.com/account/" class="content-pane-link">Return to Dashboard</a></li>
+        <li><a href="https://www.firebase.com/account/#/profile" class="content-pane-link">Account Profile</a></li>
+        <li><a href="https://www.firebase.com/account/#/billing" class="content-pane-link">Billing Information</a></li>
+        <li class="logout"><a href="https://www.firebase.com/logout.html">Logout</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul class="menu menu-apps auth-required" style="display: block;">
+    <li style="" id="menuNamespaces" class="dropdown">
+      <a class="dropdown-toggle menu-namespaces" data-toggle="dropdown" href="https://hackers-week.firebaseio.com/?page=Security#">
+        <span id="currentMenuNamespace">Viewing Hackers Week<i class="arrow icon-arrow-down"></i></span>
+      </a>
+      <ul class="dropdown-menu" role="menu"><li><a href="https://hackers-week.firebaseio.com/?page=Security#" namespace="new-android-test-app-0197309127901">New Android Test App</a></li><li><a href="https://hackers-week.firebaseio.com/?page=Security#" namespace="luminous-torch-3020">Android Codelab</a></li><li><a href="https://hackers-week.firebaseio.com/?page=Security#" namespace="jammio">JammIO</a></li><li><a href="https://hackers-week.firebaseio.com/?page=Security#" namespace="codelab-link">Codelab Link</a></li><li><a href="https://hackers-week.firebaseio.com/?page=Security#" namespace="bae-ardu">bae-ardu</a></li><li><a href="https://hackers-week.firebaseio.com/?page=Security#" namespace="android-codelab-at-codemotion">Android Codelab</a></li><li><a href="https://hackers-week.firebaseio.com/?page=Security#" namespace="chamijuego">Chamijuego</a></li><li><a href="https://hackers-week.firebaseio.com/?page=Security#" namespace="umalanparty">UMA-Lan-Party</a></li></ul>
+    </li>
+
+    <li class="concurrence-limit">
+      <!-- warnings go here -->
+    </li>
+  </ul>
+</header>
+
+
+<!-- SIDENAV -->
+<nav id="leftGutter" class="nav-sidebar">
+  <ul id="leftGutterContent">
+    <li>
+      <a href="https://hackers-week.firebaseio.com/?page=Security#1" id="itemData" class="sidebarItem enabled" data-analytics-track="view app data inspector">
+        <i class="icon-database"></i>
+        <strong>Data</strong>
+      </a>
+    </li>
+    <li class="auth-required" style="display: list-item;">
+      <a href="https://hackers-week.firebaseio.com/?page=Security#2" id="itemSecurity" class="sidebarItem enabled selected" data-analytics-track="view app security rules editor">
+        <i class="icon-lock" style="margin-left: 14px;"></i>
+        <strong>Security &amp; Rules</strong>
+      </a>
+      <div class="security-notice-icon animated fadeIn is-pinned is-hidden">!</div>
+    </li>
+    <li class="auth-required" style="display: list-item;">
+      <a href="https://hackers-week.firebaseio.com/?page=Security#4" id="itemSimulator" class="sidebarItem enabled" data-analytics-track="view app security rules simulator">
+        <i class="icon-laptop"></i>
+        <strong>Simulator</strong>
+      </a>
+    </li>
+    <li class="auth-required" style="display: list-item;">
+      <a href="https://hackers-week.firebaseio.com/?page=Security#5" id="itemAnalytics" class="sidebarItem enabled" data-analytics-track="view app analytics">
+        <i class="icon-bars2"></i>
+        <strong>Analytics</strong>
+      </a>
+    </li>
+    <li class="auth-required nav-divider" style="display: list-item;">
+      <a href="https://hackers-week.firebaseio.com/?page=Security#3" id="itemAuth" class="sidebarItem enabled" data-analytics-track="view app simple login">
+        <i class="icon-users"></i>
+        <strong>Login &amp; Auth</strong>
+      </a>
+    </li>
+    <li class="auth-required" style="display: list-item;">
+      <a href="https://hackers-week.firebaseio.com/?page=Security#6" id="itemHosting" class="sidebarItem enabled" data-analytics-track="view app hosting">
+        <i class="icon-folder"></i>
+        <strong>Hosting</strong>
+      </a>
+    </li>
+    <li class="auth-required" style="display: list-item;">
+      <a href="https://hackers-week.firebaseio.com/?page=Security#7" id="itemAdmin" class="sidebarItem enabled" data-analytics-track="view app secrets">
+        <i class="icon-key3"></i>
+        <strong>Secrets</strong>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+
+
+<!-- MAIN CONTENT -->
+<div id="content" class="content">
+
+  <!-- Main Content -->
+    <div class="clearfix mainContent" id="mainContent">
+
+      <div id="page-content-container" class="page-content-container">
+        <!-- PAGE HEADERS -->
+        <div id="headerData" class="page-header">
+  <div class="page-header-toolbar">
+    <a href="https://hackers-week.firebaseio.com/?page=Security#" id="expandall" class="button button-toolbar button-rounded" title="Expand All" data-analytics-track="data - expand all">
+      <i class="icon-plus"></i> Expand Data
+    </a><a href="https://hackers-week.firebaseio.com/?page=Security#" id="collapseall" class="button button-toolbar button-rounded" title="Collapse All" data-analytics-track="data - collapse all">
+      <i class="icon-minus2"></i> Collapse Data
+    </a>
+    <a href="https://hackers-week.firebaseio.com//.json?print=pretty&amp;format=export&amp;download=hackers-week-export.json&amp;auth=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhZG1pbiI6dHJ1ZSwiZXhwIjoxNDU3MDEyMTgwLCJ2IjowLCJkIjp7ImZvcmdlIjp0cnVlfSwiaWF0IjoxNDU2OTI1NzgwfQ.rHmHRXgxezQjk57_g6OH1JSCIrQmeiU4TZDX1ydaj_U" id="export" class="button button-toolbar button-rounded right" title="Export as JSON" data-analytics-track="data - export json">
+      <i class="icon-download"></i> Export Data
+    </a>
+    <a href="https://hackers-week.firebaseio.com/?page=Security#importmodal" id="import" class="button button-toolbar button-rounded right" title="Import JSON Data" data-toggle="modal" data-analytics-track="data - import json">
+      <i class="icon-upload"></i> Import Data
+    </a>
+  </div>
+</div>
+
+
+        <!-- DATA -->
+        <div id="contentData" class="contentData page-content">
+  <div class="box box-breadcrumbs">
+    <span class="forge-vulcan"><i class="icon-vulcan"></i> View your data in Chrome's DevTools with <a href="https://chrome.google.com/webstore/detail/vulcan-by-firebase/oippbnlmebalopjbkemajgfbglcjhnbl?hl=en">Vulcan</a></span>
+    <div class="box-header">
+      <div class="box-header-content">
+        <div id="breadcrumbs" class="breadcrumbs"><a href="https://hackers-week.firebaseio.com/">hackers-week</a></div>
+      </div>
+    </div>
+    <div class="box-content clearfix" style="position: relative;">
+      <form autocomplete="off">
+        <div id="docs"></div>
+        <div id="tree" class="jstree jstree-focused jstree-default">
+          <ul class="jstree-no-icons"><li class="jstree-open root jstree-last"><div><ins class="jstree-icon">&nbsp;</ins><span class="tree-content"><span><a class="name" href="https://hackers-week.firebaseio.com/">hackers-week</a><span class="valueContainer"></span></span></span></div><ul><li class="jstree-closed"><div><ins class="jstree-icon">&nbsp;</ins><span class="tree-content"><span><a class="name" href="https://hackers-week.firebaseio.com/0">0</a><span class="valueContainer"></span></span></span></div><ul></ul></li><li class="jstree-closed"><div><ins class="jstree-icon">&nbsp;</ins><span class="tree-content"><span><a class="name" href="https://hackers-week.firebaseio.com/1">1</a><span class="valueContainer"></span></span></span></div><ul></ul></li><li class="jstree-open"><div><ins class="jstree-icon">&nbsp;</ins><span class="tree-content"><span><a class="name" href="https://hackers-week.firebaseio.com/admins">admins</a><span class="valueContainer"></span></span></span></div><ul><li class="jstree-open"><div><ins class="jstree-icon">&nbsp;</ins><span class="tree-content"><span><a class="name" href="https://hackers-week.firebaseio.com/admins/google%3A102804687212889505033">google:102804687212889505033</a><span class="valueContainer"></span></span></span></div><ul><li class="jstree-leaf"><div><ins class="jstree-icon">&nbsp;</ins><span class="tree-content"><span><a class="name" href="https://hackers-week.firebaseio.com/admins/google%3A102804687212889505033/isAdmin">isAdmin</a><span class="valueContainer">: <input type="text" class="valueedit" disabled="" size="4" value="true"></span></span></span></div><ul></ul></li></ul></li></ul></li></ul></li></ul>
+        </div>
+      </form>
+      <div class="legend" id="legend">
+        <h5 class="legend-title text-center">Legend</h5>
+        <ul class="legend-list">
+          <li class="legend-changed">Changed</li>
+          <li class="legend-added">Added</li>
+          <li class="legend-deleted">Deleted</li>
+          <li class="legend-moved">Moved</li>
+        </ul>
+      </div>
+      <div id="spinner" class="spinner" style="display: none;"><img src="./Firebase App Dashboard_files/loader.gif"></div>
+      <div id="noDataMessage" class="noDataMessage">
+        <b>This location is empty!</b><br><br>
+        Add data by clicking the [+] data in the upper left corner.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        <!-- SECURITY CONTENT -->
+        <div id="contentSecurity" class="page-content selected"><div style="height:100%;" data-reactid=".1"><div id="headerSecurity" class="page-header is-visible" data-reactid=".1.0"><div class="page-header-toolbar" data-reactid=".1.0.0"><a href="https://hackers-week.firebaseio.com/?page=Security#" class="button button-toolbar button-rounded left" data-analytics-track="security - load rules" data-reactid=".1.0.0.0"><i class="icon-rotate" data-reactid=".1.0.0.0.0"></i><span data-reactid=".1.0.0.0.1"> Clear Changes</span></a><a href="https://www.firebase.com/docs/security/quickstart.html" class="button button-toolbar button-rounded right" data-reactid=".1.0.0.1"><i class="icon-file3" data-reactid=".1.0.0.1.0"></i><span data-reactid=".1.0.0.1.1"> Security &amp; Rules Documentation</span></a></div></div><div style="height:100%;" class="contentSecurity" data-reactid=".1.1"><div class="spacer-bottom-20 alert alert-error text-center security-notice animated is-hidden" data-reactid=".1.1.0" style=""><span data-reactid=".1.1.0.0">We recommend writing Security Rules for your app. View the </span><a href="https://www.firebase.com/docs/security/quickstart.html" data-reactid=".1.1.0.1">Security &amp; Rules Documentation</a><span data-reactid=".1.1.0.2"> for more information.</span><div class="dismiss-security-notice" title="Dismiss" data-reactid=".1.1.0.3">x</div></div><div class="box" data-reactid=".1.1.1"><div class="box-header" data-reactid=".1.1.1.0"><div class="box-header-content clearfix" data-reactid=".1.1.1.0.0"><h3 class="l-left" data-reactid=".1.1.1.0.0.0">Firebase Rules</h3><button class="l-right button button-rounded button-small button-flat-primary" data-analytics-track="security - save rules" data-reactid=".1.1.1.0.0.1">Save Rules</button></div></div><div class="rulesEditorContainer box-content" style="position:relative;" data-reactid=".1.1.1.1"><div id="rulesEditor" class="rulesEditor ace_editor ace-tm" data-reactid=".1.1.1.1.0" draggable="false"><textarea class="ace_text-input" wrap="off" autocapitalize="off" spellcheck="false" style="height: 16px; left: 174.623px; top: 64px; width: 7.20125px;"></textarea><div class="ace_gutter"><div class="ace_layer ace_gutter-layer ace_folding-enabled" style="margin-top: 0px; height: 680px; width: 41px;"><div class="ace_gutter-cell " style="height: 16px;">1<span class="ace_fold-widget ace_start ace_open" style="height: 16px;"></span></div><div class="ace_gutter-cell " style="height: 16px;">2<span class="ace_fold-widget ace_start ace_open" style="height: 16px;"></span></div><div class="ace_gutter-cell " style="height: 16px;">3</div><div class="ace_gutter-cell " style="height: 16px;">4</div><div class="ace_gutter-cell " style="height: 16px;">5<span class="ace_fold-widget ace_start ace_open" style="height: 16px;"></span></div><div class="ace_gutter-cell " style="height: 16px;">6</div><div class="ace_gutter-cell " style="height: 16px;">7</div><div class="ace_gutter-cell " style="height: 16px;">8</div><div class="ace_gutter-cell " style="height: 16px;">9</div></div><div class="ace_gutter-active-line" style="top: 64px; height: 16px;"></div></div><div class="ace_scroller" style="left: 41px; right: 0px; bottom: 0px;"><div class="ace_content" style="margin-top: 0px; width: 1252px; height: 680px; margin-left: 0px;"><div class="ace_layer ace_print-margin-layer"><div class="ace_print-margin" style="left: 580.1px; visibility: hidden;"></div></div><div class="ace_layer ace_marker-layer"><div class="ace_active-line" style="height:16px;top:64px;left:0;right:0;"></div><div class="ace_bracket ace_start" style="height:16px;width:7.20125px;top:96px;left:61.61px;"></div></div><div class="ace_layer ace_text-layer" style="padding: 0px 4px;"><div class="ace_line" style="height:16px"><span class="ace_paren ace_lparen">{</span></div><div class="ace_line" style="height:16px"><span class="ace_indent-guide">&nbsp;&nbsp;</span>&nbsp;&nbsp;<span class="ace_entity ace_name ace_type">"rules"</span>:&nbsp;<span class="ace_paren ace_lparen">{</span></div><div class="ace_line" style="height:16px"><span class="ace_indent-guide">&nbsp;&nbsp;</span><span class="ace_indent-guide">&nbsp;&nbsp;</span><span class="ace_indent-guide">&nbsp;&nbsp;</span>&nbsp;&nbsp;<span class="ace_keyword ace_control">".read"</span>:&nbsp;<span class="ace_constant ace_language ace_boolean">true</span>,</div><div class="ace_line" style="height:16px"><span class="ace_indent-guide">&nbsp;&nbsp;</span><span class="ace_indent-guide">&nbsp;&nbsp;</span><span class="ace_indent-guide">&nbsp;&nbsp;</span>&nbsp;&nbsp;<span class="ace_keyword ace_control">".write"</span>:&nbsp;<span class="ace_string">"</span><span class="ace_storage ace_type">root</span><span class="ace_punctuation ace_operator">.</span><span class="ace_entity ace_name ace_function">child</span><span class="ace_paren ace_lparen">(</span><span class="ace_string">'admins'</span><span class="ace_paren ace_rparen">)</span><span class="ace_punctuation ace_operator">.</span><span class="ace_entity ace_name ace_function">child</span><span class="ace_paren ace_lparen">(</span><span class="ace_storage ace_type">auth</span><span class="ace_punctuation ace_operator">.</span><span class="ace_string">uid</span><span class="ace_paren ace_rparen">)</span><span class="ace_punctuation ace_operator">.</span><span class="ace_entity ace_name ace_function">child</span><span class="ace_paren ace_lparen">(</span><span class="ace_string">'isAdmin'</span><span class="ace_paren ace_rparen">)</span><span class="ace_punctuation ace_operator">.</span><span class="ace_entity ace_name ace_function">val</span><span class="ace_paren ace_lparen">(</span><span class="ace_paren ace_rparen">)</span><span class="ace_string">&nbsp;</span><span class="ace_keyword ace_operator">==</span><span class="ace_string">&nbsp;</span><span class="ace_constant ace_language ace_boolean">true</span><span class="ace_string">"</span>,</div><div class="ace_line" style="height:16px"><span class="ace_indent-guide">&nbsp;&nbsp;</span><span class="ace_indent-guide">&nbsp;&nbsp;</span><span class="ace_indent-guide">&nbsp;&nbsp;</span>&nbsp;&nbsp;<span class="ace_entity ace_name ace_type">"admins"</span>:<span class="ace_paren ace_lparen">{</span></div><div class="ace_line" style="height:16px"><span class="ace_indent-guide">&nbsp;&nbsp;</span><span class="ace_indent-guide">&nbsp;&nbsp;</span><span class="ace_indent-guide">&nbsp;&nbsp;</span><span class="ace_indent-guide">&nbsp;&nbsp;</span>&nbsp;&nbsp;<span class="ace_keyword ace_control">".read"</span>:&nbsp;<span class="ace_string">"</span><span class="ace_storage ace_type">auth</span><span class="ace_string">&nbsp;</span><span class="ace_keyword ace_operator">!</span><span class="ace_string">=&nbsp;null&nbsp;</span><span class="ace_keyword ace_operator">&amp;&amp;</span><span class="ace_string">&nbsp;</span><span class="ace_storage ace_type">root</span><span class="ace_punctuation ace_operator">.</span><span class="ace_entity ace_name ace_function">child</span><span class="ace_paren ace_lparen">(</span><span class="ace_string">'admins'</span><span class="ace_paren ace_rparen">)</span><span class="ace_punctuation ace_operator">.</span><span class="ace_entity ace_name ace_function">child</span><span class="ace_paren ace_lparen">(</span><span class="ace_storage ace_type">auth</span><span class="ace_punctuation ace_operator">.</span><span class="ace_string">uid</span><span class="ace_paren ace_rparen">)</span><span class="ace_punctuation ace_operator">.</span><span class="ace_entity ace_name ace_function">child</span><span class="ace_paren ace_lparen">(</span><span class="ace_string">'isAdmin'</span><span class="ace_paren ace_rparen">)</span><span class="ace_punctuation ace_operator">.</span><span class="ace_entity ace_name ace_function">val</span><span class="ace_paren ace_lparen">(</span><span class="ace_paren ace_rparen">)</span><span class="ace_string">&nbsp;</span><span class="ace_keyword ace_operator">==</span><span class="ace_string">&nbsp;</span><span class="ace_constant ace_language ace_boolean">true</span><span class="ace_string">"</span></div><div class="ace_line" style="height:16px"><span class="ace_indent-guide">&nbsp;&nbsp;</span><span class="ace_indent-guide">&nbsp;&nbsp;</span><span class="ace_indent-guide">&nbsp;&nbsp;</span>&nbsp;&nbsp;<span class="ace_paren ace_rparen">}</span></div><div class="ace_line" style="height:16px"><span class="ace_indent-guide">&nbsp;&nbsp;</span>&nbsp;&nbsp;<span class="ace_paren ace_rparen">}</span></div><div class="ace_line" style="height:16px"><span class="ace_paren ace_rparen">}</span></div></div><div class="ace_layer ace_marker-layer"></div><div class="ace_layer ace_cursor-layer ace_hidden-cursors"><div class="ace_cursor" style="left: 133.623px; top: 64px; width: 7.20125px; height: 16px;"></div></div></div></div><div class="ace_scrollbar ace_scrollbar-v" style="display: none; width: 20px; bottom: 0px;"><div class="ace_scrollbar-inner" style="width: 20px; height: 144px;"></div></div><div class="ace_scrollbar ace_scrollbar-h" style="display: none; height: 20px; left: 41px; right: 0px;"><div class="ace_scrollbar-inner" style="height: 20px; width: 1293px;"></div></div><div style="height: auto; width: auto; top: -100px; left: -100px; visibility: hidden; position: fixed; white-space: pre; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; overflow: hidden;"><div style="height: auto; width: auto; top: -100px; left: -100px; visibility: hidden; position: fixed; white-space: pre; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; overflow: visible;"></div><div style="height: auto; width: auto; top: -100px; left: -100px; visibility: hidden; position: fixed; white-space: pre; font-style: inherit; font-variant: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; overflow: visible;">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div></div><div class="ace_tooltip" style="display: none; left: 166px; top: 251px;">Unexpected '''</div></div></div></div></div></div></div>
+
+        <!-- LOGIN -->
+        <div id="contentAuth" class="contentAuth page-content">
+  <div class="spacer-top-40 space-bottom-40 spacer-left-40 spacer-right-40">
+    <h2 class="page-title">User Login &amp; Authentication</h2>
+
+    <div id="authSettings">
+
+      <div class="grid-fluid authDomainsAndSessionWrapper">
+        <!-- AUTHORIZED DOMAINS & SESSION LENGTH -->
+        <div id="authDomainsWrapper" class="authDomainsWrapper c9 nb">
+            <label for="authDomains" class="form-label">
+              Authorized Domains for OAuth Redirects
+            </label>
+            <p>For third-party authentication (Facebook, Twitter, GitHub or Google), your domain must be whitelisted below for OAuth redirects. <span class="authDefaultDomains">Default authorized domains include:  <code class="code-inline">localhost</code>,  <code class="code-inline">127.0.0.1</code>,  <code class="code-inline">hackers-week.firebaseapp.com</code></span>
+            </p>
+            <div class="text-core" style="height: 0px;"><div class="text-wrap" style="width: 100px; height: 0px;"><input type="text" id="authDomains" class="form-field" style="width: 100px; padding-left: 5px; padding-top: 3px;"><div class="text-tags"></div><input type="hidden" value="[]"></div></div>
+            <div class="error" id="authDomainsError"></div>
+        </div>
+
+        <div id="authSessionLengthWrapper" class="authSessionLengthWrapper c3">
+          <label for="authSessionLength" class="form-label">
+            Session Length
+            <i class="icon-question2" data-toggle="popover" data-title="Session Length" data-content="The length of time a session will remain valid. This setting will affect all methods of authentication." data-original-title="" title=""></i>
+          </label>
+          <div class="dropdown-field">
+            <input id="authSessionLength" type="text" class="authSessionLength form-field save-on-blur">
+            <select id="authSessionScale" class="authSessionScale"><option value="1">Seconds</option><option value="60">Minutes</option><option value="3600" selected="selected">Hours</option><option value="86400">Days</option><option value="604800">Weeks</option><option value="2592000">Months</option></select>
+          </div>
+        </div>
+      </div>
+
+      <!-- USER LOGIN TYPES -->
+      <div class="tabs l-margin-top-40">
+        <nav class="tabs-header">
+          <a href="https://hackers-week.firebaseio.com/?page=Security#" class="tab selected" id="selectPassword" data-analytics-track="simple login - email">Email &amp; Password</a>
+          <a href="https://hackers-week.firebaseio.com/?page=Security#" class="tab" id="selectFacebook" data-analytics-track="simple login - facebook">Facebook</a>
+          <a href="https://hackers-week.firebaseio.com/?page=Security#" class="tab" id="selectTwitter" data-analytics-track="simple login - twitter">Twitter</a>
+          <a href="https://hackers-week.firebaseio.com/?page=Security#" class="tab" id="selectGitHub" data-analytics-track="simple login - github">GitHub</a>
+          <a href="https://hackers-week.firebaseio.com/?page=Security#" class="tab" id="selectGoogle" data-analytics-track="simple login - google">Google</a>
+          <a href="https://hackers-week.firebaseio.com/?page=Security#" class="tab" id="selectAnonymous" data-analytics-track="simple login - anonymous">Anonymous</a>
+          <a href="https://hackers-week.firebaseio.com/?page=Security#" class="tab" id="selectCustom" data-analytics-track="simple login - custom">Custom</a>
+          <div class="clear"></div>
+        </nav>
+
+        <div id="selectPageCustom" class="selectable tabs-content">
+          <div class="grid-fluid">
+            <div class="c12">
+              <div class="info-callout">
+                <h4>Using Custom Authentication</h4>
+                <p>Firebase gives you complete control over user authentication by allowing you to authenticate using secure JSON Web Tokens (JWTs).
+                </p>
+                <p>
+                  To generate a token you'll need to use a <a href="https://hackers-week.firebaseio.com/?page=Admin">Firebase Secret</a>. This method of authentication is useful in cases where you are already managing user accounts on your server or where you have more advanced authentication needs. <a target="_blank" href="https://www.firebase.com/docs/web/guide/login/custom.html">Learn more</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="selectPageFacebook" class="selectable tabs-content">
+          <div class="authLoadWait grid-fluid">
+            <div id="authFacebookUI" class="c8">
+              <div class="l-margin-bottom-20">
+                <input type="checkbox" id="authFacebookEnabled" class="form-checkbox">
+                <label for="authFacebookEnabled" class="form-label-inline"> Enable Facebook Authentication</label>
+              </div>
+
+              <div class="l-margin-bottom-20">
+                <label for="authFacebookAppId" class="form-label-inline">Facebook App Id: </label>
+                <input type="text" id="authFacebookAppId" class="form-field form-field-inline save-on-blur">
+              </div>
+
+              <div>
+                <label for="authFacebookAppSecret" class="form-label-inline">Facebook App Secret: </label>
+                <input type="text" id="authFacebookAppSecret" class="form-field form-field-inline save-on-blur">
+              </div>
+            </div>
+
+            <div class="c4">
+              <div class="info-callout">
+                <h4>Configuring Your Facebook App</h4>
+                <p>To get started with Facebook authentication, you need to first create a new Facebook application.
+                <a target="_blank" href="https://www.firebase.com/docs/web/guide/login/facebook.html">Learn more</a>
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div id="selectPageTwitter" class="selectable tabs-content">
+          <div class="authLoadWait grid-fluid">
+
+            <div class="c8" id="authTwitterUI">
+              <div class="l-margin-bottom-20">
+                <input type="checkbox" id="authTwitterEnabled" class="form-checkbox">
+                <label for="authTwitterEnabled" class="form-label-inline"> Enable Twitter Authentication</label>
+              </div>
+
+              <div class="l-margin-bottom-20">
+                <label for="authTwitterAppId" class="form-label-inline">Twitter API Key:</label>
+                <input type="text" id="authTwitterAppId" class="form-field form-field-inline save-on-blur">
+              </div>
+
+              <div>
+                <label for="authTwitterAppSecret" class="form-label-inline">Twitter API Secret:</label>
+                <input type="text" id="authTwitterAppSecret" class="form-field form-field-inline save-on-blur">
+              </div>
+            </div>
+
+            <div class="c4">
+              <div class="info-callout">
+                <h4>Configuring Your Twitter App</h4>
+                <p>To get started with Twitter authentication, you need to first create a new Twitter application.
+                <a target="_blank" href="https://www.firebase.com/docs/web/guide/login/twitter.html">Learn more</a>
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div id="selectPageGitHub" class="selectable tabs-content">
+          <div class="authLoadWait grid-fluid">
+
+            <div class="c8" id="authGitHubUI">
+              <div class="l-margin-bottom-20">
+                <input type="checkbox" id="authGitHubEnabled" class="form-checkbox">
+                <label for="authGitHubEnabled" class="form-label-inline"> Enable Github Authentication</label>
+              </div>
+
+              <div class="l-margin-bottom-20">
+                <label for="authGitHubAppId" class="form-label-inline">GitHub Client ID:</label>
+                <input type="text" id="authGitHubAppId" class="form-field form-field-inline save-on-blur">
+              </div>
+
+              <div>
+                <label for="authGitHubAppSecret" class="form-label-inline">GitHub Client Secret:</label>
+                <input type="text" id="authGitHubAppSecret" class="form-field form-field-inline save-on-blur">
+              </div>
+            </div>
+
+            <div class="c4">
+              <div class="info-callout">
+                <h4>Configuring Your Github App</h4>
+                <p>To get started with Github authentication in, you need to first create a new Github application.
+                <a target="_blank" href="https://www.firebase.com/docs/web/guide/login/github.html">Learn more</a>
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div id="selectPageGoogle" class="selectable tabs-content">
+          <div class="authLoadWait grid-fluid">
+
+            <div class="c8" id="authGoogleUI">
+              <div class="l-margin-bottom-20">
+                <input type="checkbox" id="authGoogleEnabled" class="form-checkbox">
+                <label for="authGoogleEnabled" class="form-label-inline"> Enable Google Authentication</label>
+              </div>
+
+              <div class="l-margin-bottom-20">
+                <label for="authGoogleAppId" class="form-label-inline">Google Client ID:</label>
+                <input type="text" id="authGoogleAppId" class="form-field form-field-inline save-on-blur">
+              </div>
+
+              <div>
+                <label for="authGoogleAppSecret" class="form-label-inline">Google Client Secret:</label>
+                <input type="text" id="authGoogleAppSecret" class="form-field form-field-inline save-on-blur">
+              </div>
+            </div>
+
+            <div class="c4">
+              <div class="info-callout">
+                <h4>Configuring Your Google App</h4>
+                <p>To get started with Google authentication in, you need to first create a new Google application.
+                <a target="_blank" href="https://www.firebase.com/docs/web/guide/login/google.html">Learn more</a>
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div id="selectPageAnonymous" class="selectable tabs-content">
+          <div class="authLoadWait grid-fluid">
+
+            <div class="c8" id="authAnonymousUI">
+              <div class="l-margin-bottom-20">
+                <input type="checkbox" id="authAnonymousEnabled" class="form-checkbox">
+                <label for="authAnonymousEnabled" class="form-label-inline"> Enable Anonymous User Authentication</label>
+              </div>
+            </div>
+
+            <div class="c4">
+              <div class="info-callout">
+                <h4>Configuring Anonymous Auth</h4>
+                <p>Firebase makes it easy to create anonymous guest accounts in your application.
+                <a target="_blank" href="https://www.firebase.com/docs/web/guide/login/anonymous.html">Learn more</a>
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div id="selectPagePassword" class="selectable tabs-content selected">
+          <div class="authLoadWait grid-fluid">
+
+            <div class="c12" id="authPasswordUI">
+              <div class="l-margin-bottom-20">
+                <input type="checkbox" id="authPasswordEnabled" class="form-checkbox">
+                <label for="authPasswordEnabled" class="form-label-inline"> Enable Email &amp; Password Authentication</label>
+              </div>
+            </div>
+
+            <div class="c12">
+              <div class="info-callout">
+                <h4>Configuring Email &amp; Password</h4>
+                <p>Firebase makes it easy to integrate email and password authentication into your app.
+                <a target="_blank" href="https://www.firebase.com/docs/web/guide/login/password.html">Learn more</a>
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <div id="authPasswordUsersWrapper" class="authPasswordUsersWrapper clearfix is-hidden">
+            <h4>Password Resets</h4>
+            <div id="formPasswordResetEmailWrapper" class="formPasswordResetEmailWrapper">
+              <div id="formPasswordResetEmailRow" class="formPasswordResetEmailRow">
+                <div id="formPasswordResetEmail" class="formPasswordResetEmail">
+                  <div class="reset-email-row from">
+                    <label>From</label>
+                    <span>
+                      <input type="text" id="authPasswordResetEmailFrom" class="authPasswordResetEmailFrom save-on-blur" placeholder="noreply">
+                      <span id="authPasswordResetEmailFromDomain" class="authPasswordResetEmailFromDomain">@hackers-week.firebaseapp.com</span>
+                    </span>
+                  </div>
+                  <div class="reset-email-row fromname">
+                    <label>From Name</label>
+                    <span><input type="text" id="authPasswordResetEmailFromName" class="save-on-blur"></span>
+                  </div>
+                  <div class="reset-email-row replyto validate-email">
+                    <label>Reply-To</label>
+                    <span><input type="text" id="authPasswordResetEmailReplyTo" class="save-on-blur"></span>
+                  </div>
+                  <div class="reset-email-row subject">
+                    <label>Subject</label>
+                    <span><input type="text" id="authPasswordResetEmailSubject" class="save-on-blur" placeholder="Reset Your Password"></span>
+                  </div>
+                  <div class="reset-email-row format">
+                    <label>Format</label>
+                    <span>
+                      <label for="authPasswordResetEmailFormatPlainText">
+                        <input id="authPasswordResetEmailFormatPlainText" type="radio" name="email_format" value="plainText" checked="checked">
+                          Plain text
+                      </label>
+                      <label for="authPasswordResetEmailFormatHtml">
+                        <input id="authPasswordResetEmailFormatHtml" class="authPasswordResetEmailFormatHtml" type="radio" name="email_format" value="html">
+                          HTML
+                      </label>
+                    </span>
+                  </div>
+                  <div class="reset-email-content">
+                    <div class="instructions">
+                      Include the strings <b>%TOKEN%</b> and <b>%EMAIL%</b> in your template to enable password recovery in your app. Your users will be sent a new, temporary token that may be used to log in and update their credentials.
+                    </div>
+                    <textarea cols="60" rows="10" id="authPasswordResetEmailTemplate" class="save-on-blur">Hello!
+
+It looks like you've forgotten your password.
+
+Use the following temporary password within the next 24 hours to log in and update your account: %TOKEN%
+
+Thanks!</textarea>
+                  </div>
+                  <div class="branding">
+                    -- Powered by Firebase, https://www.firebase.com --
+                  </div>
+                </div>
+                <div id="formPasswordResetNotes" class="formPasswordResetNotes">
+                  <div class="formPasswordResetNotesPane">
+                    <h3>Password Reset Emails</h3>
+                    <div class="p">
+                      Enable users to recover lost accounts with automated password reset emails.
+                    </div>
+
+                    <h4>How It Works</h4>
+                    <div class="p">
+                      Each Firebase client library supports resetting a user's password by calling a single function. Users will then be sent a new, temporary password that may be used to log in and update their login credentials.
+                    </div>
+
+                    <h4>Paid Features: Whitelabel Emails</h4>
+                    <div class="p">
+                      Upgrade to a Candle plan or higher to remove Firebase branding from Firebase password reset emails and unlock sending from your own domain.
+                    </div>
+                    <div class="p">
+                      Whitelabeling your email is as easy as setting two DNS records.
+                    </div>
+                    <div class="p">
+                      Ready to whitelabel? Click configure below.
+                    </div>
+                    <div class="p">
+                      <br><br>
+                      <a href="https://hackers-week.firebaseio.com/?page=Security#" class="button button-rounded button-flat-primary" id="formPasswordResetWhitelabel">Setup Whitelabel Email</a>
+                    </div>
+                  </div>
+                  <div class="formPasswordResetNotesPane hidden">
+                    <h3>Whitelabel Email Setup</h3>
+                    <div class="p">
+                      Configure the following DNS records for the domain you'd like to sign. Once you've added these DNS records, use the tool below to verify your configuration.
+                    </div>
+
+                    <h4>Sending Email Address</h4>
+                    <div class="p">
+                      <input type="text" id="formPasswordResetWhitelabelDomain" class="forge-textbox save-on-blur" placeholder="username@mydomain.com">
+                    </div>
+
+                    <h4>Step 1: Add SPF Record</h4>
+                    <div id="whitelabel-result-spf" class="p indent">
+                      <b>Domain</b>: <span class="formPasswordResetWhitelabelDomain">mydomain.com</span><br><br>
+                      <b>Type</b>: TXT<br><br>
+                      <label>
+                        v=spf1 include:_spf.firebasemail.com ~all
+                      </label>
+                    </div>
+
+                    <h4>Step 2: Add DKIM Record</h4>
+                    <div id="whitelabel-result-dkim" class="p indent">
+                      <b>Domain</b>: smtpapi._domainkey.<span class="formPasswordResetWhitelabelDomain">mydomain.com</span><br><br>
+                      <b>Type</b>: TXT<br><br>
+                      <label>
+                        k=rsa; t=s;
+                        p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDPtW5iwpXVPiH5FzJ7Nrl8USzuY9zqqzjE0D1r04xDN6qwziDnmgcFNNfMewVKN2D1O+2J9N14hRprzByFwfQW76yojh54Xu3uSbQ3JP0A7k8o8GutRF8zbFUA8n0ZH2y0cIEjMliXY4W4LwPA7m4q0ObmvSjhd63O9d8z1XkUBwIDAQAB
+                      </label>
+                    </div>
+
+                    <div id="whitelabel-result-message" class="whitelabel-result-message p hidden whitelabel-failure" style="display: block;">Upgrade your plan to enable whitelabel email.</div>
+
+                    <div class="p">
+                      <a href="https://hackers-week.firebaseio.com/?page=Security#" class="button button-rounded button-flat-action disabled" id="formPasswordResetWhitelabelValidate" disabled="disabled">Validate</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="spacer-top-60" id="user-table-wrapper">
+              <h4 id="users" class="table-title">Registered Users</h4><a href="https://hackers-week.firebaseio.com/?page=Security#" class="table-refresh spacer-left-10" data-name="refresh-table">refresh list</a>
+              <button class="right button button-flat-attention spacer-left-10 spacer-bottom-10 button-rounded" data-name="add-user">Add User</button>
+              <table id="user-table" class="table" cellspacing="0">
+                <thead>
+                  <tr class="table-header">
+                    <th class="is-sorted" data-name="sort-column" data-sort="email" data-descending="false">Email <div class="sort-arrow"></div></th>
+                    <th data-name="sort-column" data-sort="createdAt" data-descending="false">Created <div class="sort-arrow"></div></th>
+                    <th>User UID </th>
+                    <th><input type="search" id="table-search" class="table-search" placeholder="Search for user..."><a href="https://hackers-week.firebaseio.com/?page=Security#" class="table-search-clear-input" data-name="clear-search">x</a></th>
+                  </tr>
+                  <tr class="table-search-results">
+                    <th colspan="4"><div class="table-search-results-text left"> Result 1 of 1 for <em>'search' </em></div><a href="https://hackers-week.firebaseio.com/?page=Security#" class="table-search-clear right" data-name="clear-search">clear search <div class="table-search-clear-x">x</div></a></th>
+                  </tr>
+                  <tr class="table-loader">
+                    <th colspan="4">
+                      <div class="loading-bars">
+  <div class="loading-bar loading-bar1"></div>
+  <div class="loading-bar loading-bar2"></div>
+  <div class="loading-bar loading-bar3"></div>
+  <p class=""> loading </p>
+</div>
+                    </th>
+                  </tr>
+                  <tr class="table-empty">
+                    <th colspan="4">
+                      <em>no registered email/password users</em>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+
+              <div class="text-center spacer-top-20">
+                <p id="table-page-count" class="table-page-count"></p>
+                <button class="button button-rounded button-small button-flat is-hidden" id="table-prev-page" data-name="prev-page"><i class="icon-arrow-left table-prev-icon"></i>Prev</button>
+                <span id="table-pages" class="table-pages"></span>
+                <button class="button button-rounded button-small button-flat is-hidden" id="table-next-page" data-name="next-page">Next<i class="icon-uniE620 table-next-icon"></i></button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+        <!-- HOSTING -->
+        <div id="contentHosting" class="page-content"><div class="subview-container hosting show-deployments" data-reactid=".0"><header class="hosting-dashboard-header" data-reactid=".0.0"><h2 data-reactid=".0.0.0">Firebase Hosting</h2><a target="_blank" href="https://www.firebase.com/docs/hosting.html" data-analytics-track="hosting - documentation link" data-reactid=".0.0.1"><i class="icon-file3" data-reactid=".0.0.1.0"></i><span data-reactid=".0.0.1.1"> Hosting Documentation</span></a><div class="clear" data-reactid=".0.0.2"></div></header><section class="hosting-content hosting-domain domain-mode-normal domain-status-no-domain" data-reactid=".0.1"><span data-reactid=".0.1.0"></span><div class="domain-info animated fadeIn" data-reactid=".0.1.1"><div class="domain-name left" data-reactid=".0.1.1.0"><i class="icon-earth" data-reactid=".0.1.1.0.0"></i><span data-reactid=".0.1.1.0.1"> </span><a target="_blank" href="https://hackers-week.firebaseapp.com/" data-reactid=".0.1.1.0.2">https://hackers-week.firebaseapp.com</a><span data-reactid=".0.1.1.0.3"></span></div><div class="right" data-reactid=".0.1.1.1" data-original-title="" title=""><button class="button button-primary button-rounded button-small" data-analytics-track="hosting - use custom domain" data-reactid=".0.1.1.1.0">Use a Custom Domain</button></div><div class="clear" data-reactid=".0.1.1.2"></div></div><div class="domain-content" data-reactid=".0.1.2"></div></section><div class="hosting-content hosting-deployments" data-reactid=".0.2"><noscript data-reactid=".0.2.0"></noscript><div class="deployment-controls" data-reactid=".0.2.1"><span class="button-dropdown" data-buttons="dropdown" data-reactid=".0.2.1.0"><a href="https://hackers-week.firebaseio.com/?page=Security#" class="button button-rounded" data-reactid=".0.2.1.0.0"><span data-reactid=".0.2.1.0.0.0">#</span><span data-reactid=".0.2.1.0.0.1">2</span><span data-reactid=".0.2.1.0.0.2"> - Deployed </span><span data-reactid=".0.2.1.0.0.3">Mar 2nd 16, 11:32am</span><span data-reactid=".0.2.1.0.0.4"> </span><i class="icon-arrow-down2" data-reactid=".0.2.1.0.0.5"></i></a><ul data-reactid=".0.2.1.0.1"><li data-reactid=".0.2.1.0.1.$-KBqsILt2QmLDlJT1NLC"><span data-reactid=".0.2.1.0.1.$-KBqsILt2QmLDlJT1NLC.0">2</span><span data-reactid=".0.2.1.0.1.$-KBqsILt2QmLDlJT1NLC.1"> - </span><span data-reactid=".0.2.1.0.1.$-KBqsILt2QmLDlJT1NLC.2">Mar 2nd 16, 11:32am</span></li><li data-reactid=".0.2.1.0.1.$-KBqY3t9555Jr_3P2C85"><span data-reactid=".0.2.1.0.1.$-KBqY3t9555Jr_3P2C85.0">1</span><span data-reactid=".0.2.1.0.1.$-KBqY3t9555Jr_3P2C85.1"> - </span><span data-reactid=".0.2.1.0.1.$-KBqY3t9555Jr_3P2C85.2">Mar 2nd 16, 9:59am</span></li></ul></span></div><div class="hosting-table-wrapper" data-reactid=".0.2.2"><h5 data-reactid=".0.2.2.0"><span data-reactid=".0.2.2.0.0">History for </span><span data-reactid=".0.2.2.0.1">hackers-week</span></h5><table class="hosting-table" data-reactid=".0.2.2.1"><tbody data-reactid=".0.2.2.1.0"><tr data-reactid=".0.2.2.1.0.$-KBqsILt2QmLDlJT1NLC"><td class="deployment-version" data-reactid=".0.2.2.1.0.$-KBqsILt2QmLDlJT1NLC.0">2</td><td class="deployment-status" width="110" data-reactid=".0.2.2.1.0.$-KBqsILt2QmLDlJT1NLC.1"><em class="status-deployed" data-reactid=".0.2.2.1.0.$-KBqsILt2QmLDlJT1NLC.1.0">deployed</em></td><td width="200" class="deployment-commit clearfix" data-reactid=".0.2.2.1.0.$-KBqsILt2QmLDlJT1NLC.2"><img class="deploy-avatar" data-reactid=".0.2.2.1.0.$-KBqsILt2QmLDlJT1NLC.2.0" src="./Firebase App Dashboard_files/photo(1).jpg"><p class="deploy-message" data-reactid=".0.2.2.1.0.$-KBqsILt2QmLDlJT1NLC.2.1">Deployed by baena.francisco@gmail.com</p></td><td class="deployment-time" data-reactid=".0.2.2.1.0.$-KBqsILt2QmLDlJT1NLC.3">03/02/16 11:32am</td><td class="options" data-reactid=".0.2.2.1.0.$-KBqsILt2QmLDlJT1NLC.4"><a href="https://hackers-week.firebaseio.com/?page=Security#" title="Rollback" class="button-rollback" data-analytics-track="hosting - rollback (row)" data-reactid=".0.2.2.1.0.$-KBqsILt2QmLDlJT1NLC.4.0"><i class="icon-rotate" data-reactid=".0.2.2.1.0.$-KBqsILt2QmLDlJT1NLC.4.0.0"></i></a></td><td class="options" data-reactid=".0.2.2.1.0.$-KBqsILt2QmLDlJT1NLC.5"><button href="#" title="Delete" class="button-rollback disabled" disabled="" data-reactid=".0.2.2.1.0.$-KBqsILt2QmLDlJT1NLC.5.0"><i class="icon-remove" data-reactid=".0.2.2.1.0.$-KBqsILt2QmLDlJT1NLC.5.0.0"></i></button></td></tr><tr data-reactid=".0.2.2.1.0.$-KBqY3t9555Jr_3P2C85"><td class="deployment-version" data-reactid=".0.2.2.1.0.$-KBqY3t9555Jr_3P2C85.0">1</td><td class="deployment-status" width="110" data-reactid=".0.2.2.1.0.$-KBqY3t9555Jr_3P2C85.1"><em class="status-deployed" data-reactid=".0.2.2.1.0.$-KBqY3t9555Jr_3P2C85.1.0">deployed</em></td><td width="200" class="deployment-commit clearfix" data-reactid=".0.2.2.1.0.$-KBqY3t9555Jr_3P2C85.2"><img class="deploy-avatar" data-reactid=".0.2.2.1.0.$-KBqY3t9555Jr_3P2C85.2.0" src="./Firebase App Dashboard_files/photo(1).jpg"><p class="deploy-message" data-reactid=".0.2.2.1.0.$-KBqY3t9555Jr_3P2C85.2.1">Deployed by baena.francisco@gmail.com</p></td><td class="deployment-time" data-reactid=".0.2.2.1.0.$-KBqY3t9555Jr_3P2C85.3">03/02/16 9:59am</td><td class="options" data-reactid=".0.2.2.1.0.$-KBqY3t9555Jr_3P2C85.4"><a href="https://hackers-week.firebaseio.com/?page=Security#" title="Rollback" class="button-rollback" data-analytics-track="hosting - rollback (row)" data-reactid=".0.2.2.1.0.$-KBqY3t9555Jr_3P2C85.4.0"><i class="icon-rotate" data-reactid=".0.2.2.1.0.$-KBqY3t9555Jr_3P2C85.4.0.0"></i></a></td><td class="options" data-reactid=".0.2.2.1.0.$-KBqY3t9555Jr_3P2C85.5"><button href="#" title="Delete" class="button-rollback" data-analytics-track="hosting - delete (row)" data-reactid=".0.2.2.1.0.$-KBqY3t9555Jr_3P2C85.5.0"><i class="icon-remove" data-reactid=".0.2.2.1.0.$-KBqY3t9555Jr_3P2C85.5.0.0"></i></button></td></tr></tbody></table></div></div></div></div>
+
+        <!-- ADMIN -->
+        <div id="contentAdmin" class="page-content">
+  <div class="box">
+    <div class="box-header">
+      <div class="box-header-content">Firebase Secrets</div>
+    </div>
+    <div id="authSecretsWrapper" class="box-content form">
+      <div class="authLoadWait">
+        <ul>
+          <li class="grid-fluid">
+            <div class="c8">
+              <div id="authSecrets" class="authSecrets"><div class="p row-secret"><input type="password" class="forge-textbox" readonly="readonly" value="eLZhQyZZscH7ct3416plsLwezistI233hYuzrPwN"><label class="error" style="display:none;"></label><a href="https://hackers-week.firebaseio.com/?page=Security#" class="button button-rounded button-small button-flat secretShow" data-analytics-track="secrets - show">Show</a><a href="https://hackers-week.firebaseio.com/?page=Security#" class="button button-rounded button-small button-flat-caution secretRevoke" data-analytics-track="secrets - revoke" style="display: none;">Revoke</a></div></div>
+              <footer class="l-margin-top-40 l-margin-bottom-20">
+                <a id="authAddSecret" href="https://hackers-week.firebaseio.com/?page=Security#" class="button button-rounded button-flat-primary" data-analytics-track="secrets - add new">
+                  Add New
+                </a>
+              </footer>
+            </div>
+
+            <div class="c4">
+              <div class="info-callout">
+                <h4>Using Custom Authentication</h4>
+                <p>Firebase gives you complete control over user authentication by allowing you to authenticate users using secure JSON Web Tokens (JWTs).
+                </p>
+                <p>
+                  This method of authentication is useful in cases where you are already managing user accounts on your server or where you have more advanced authentication needs. <a target="_blank" href="https://www.firebase.com/docs/web/guide/login/custom.html">Learn more</a>
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        <!-- SIMULATOR -->
+        <div id="contentSimulator" class="page-content"><div class="simulator" data-reactid=".2"><div class="box" data-reactid=".2.0"><div class="box-header" data-reactid=".2.0.0"><div class="box-header-content" data-reactid=".2.0.0.0">1. Authenticate As a User:</div></div><div class="box-content clearfix" data-reactid=".2.0.1"><div class="simulator-auth-mode" data-reactid=".2.0.1.0"><label data-reactid=".2.0.1.0.0"><input type="radio" name="authType" value="unauthenticated" checked="" data-reactid=".2.0.1.0.0.0"><span data-reactid=".2.0.1.0.0.1">Unauthenticated </span><i class="icon-checkmark simulator-auth-status" data-reactid=".2.0.1.0.0.2"></i></label></div><div class="simulator-auth-mode simulator-auth-mode-custom" data-reactid=".2.0.1.1"><div class="simulator-inline-field" data-reactid=".2.0.1.1.0"><label data-reactid=".2.0.1.1.0.0"><input type="radio" name="authType" value="custom" data-reactid=".2.0.1.1.0.0.0"><span data-reactid=".2.0.1.1.0.0.1">Custom Auth </span></label><span class="simulator-inline-textbox" data-reactid=".2.0.1.1.0.1"><input type="text" class="forge-textbox" value="{ provider: &#39;anonymous&#39;, uid: &#39;002a448c-30c0-4b87-a16b-f70dfebe3386&#39; }" disabled="" data-reactid=".2.0.1.1.0.1.0"></span></div></div><div class="simulator-auth-mode" data-reactid=".2.0.1.2"><label data-reactid=".2.0.1.2.0"><input type="radio" name="authType" value="admin" data-reactid=".2.0.1.2.0.0"><span data-reactid=".2.0.1.2.0.1">Admin </span></label></div><a href="https://hackers-week.firebaseio.com/?page=Security#" class="button button-rounded button-flat-primary" data-analytics-track="simulator - authenticate" data-reactid=".2.0.1.3">Authenticate</a></div></div><div class="box" data-reactid=".2.1"><div class="box-header" data-reactid=".2.1.0"><div class="box-header-content" data-reactid=".2.1.0.0"><span data-reactid=".2.1.0.0.0">2. Simulate Read and Write Operations as your User:</span><div class="selector" data-reactid=".2.1.0.0.1"><a href="https://hackers-week.firebaseio.com/?page=Security#" class="tab selected" data-name="read" data-reactid=".2.1.0.0.1.0">Read</a><a href="https://hackers-week.firebaseio.com/?page=Security#" class="tab" data-name="write" data-reactid=".2.1.0.0.1.1">Write</a></div></div></div><div class="box-content clearfix" data-reactid=".2.1.1"><div class="selectable selected" data-reactid=".2.1.1.0"><div class="simulator-inline-field" data-reactid=".2.1.1.0.0"><label class="nowrap" data-reactid=".2.1.1.0.0.0"><span class="simulator-inline-label" data-reactid=".2.1.1.0.0.0.0">URL</span><span data-reactid=".2.1.1.0.0.0.1">https://hackers-week.firebaseio.com/</span></label><span class="simulator-inline-textbox" data-reactid=".2.1.1.0.0.1"><input type="text" class="forge-textbox" placeholder="path..." value="/" data-reactid=".2.1.1.0.0.1.0"></span><a href="https://hackers-week.firebaseio.com/?page=Security#" class="button button-rounded button-flat-primary" data-analytics-track="simulator - simulate read" data-reactid=".2.1.1.0.0.2">Simulate&nbsp;Read</a></div><div class="simulator-results" data-reactid=".2.1.1.0.1"><span data-reactid=".2.1.1.0.1.0"><span data-reactid=".2.1.1.0.1.0.0">Enter a path to read and then press "Simulate Read."</span><br data-reactid=".2.1.1.0.1.0.1"><br data-reactid=".2.1.1.0.1.0.2"><span data-reactid=".2.1.1.0.1.0.3">We'll simulate the operation against your currently saved security and Firebase rules and results will appear here.</span></span></div></div></div></div></div></div>
+
+        <!-- ANALYTICS -->
+        <div id="contentAnalytics" class="page-content">
+  <!-- PAGE HEADERS -->
+    <div id="headerAnalytics" class="page-header">
+      <div class="page-header-toolbar">
+        <div class="page-header-message"><i class="icon-bars"></i> Performance data is updated hourly.</div>
+      </div>
+    </div>
+
+  <div id="analyticsWrapper" class="analyticsWrapper">
+
+    <div class="analyticsBubble">
+      <span class="title">Total Data Stored</span>
+      <span id="metric-storage30d" class="value"></span>
+    </div>
+    <div class="analyticsBubble">
+      <span class="title">Database Bandwidth (Last 30 Days)</span>
+      <span id="metric-bandwidth30d" class="value"></span>
+    </div>
+    <div class="analyticsBubble">
+      <span class="title">Peak Concurrents (Last 30 Days)</span>
+      <span id="metric-concurrents30d" class="value"></span>
+    </div>
+    <br>
+
+    <div class="analyticsGraphBox">
+      <div class="chartTitle">Database Bandwidth (Last 24 Hours)</div>
+      <div id="highchart-bandwidth24h">
+        <div class="loading-bars">
+  <div class="loading-bar loading-bar1"></div>
+  <div class="loading-bar loading-bar2"></div>
+  <div class="loading-bar loading-bar3"></div>
+  <p class="">  </p>
+</div>
+      </div>
+    </div>
+
+    <div class="analyticsGraphBox">
+      <div class="chartTitle">Database Bandwidth (Last 30 Days)</div>
+      <div id="highchart-bandwidth30d">
+        <div class="loading-bars">
+  <div class="loading-bar loading-bar1"></div>
+  <div class="loading-bar loading-bar2"></div>
+  <div class="loading-bar loading-bar3"></div>
+  <p class="">  </p>
+</div>
+      </div>
+    </div>
+
+    <div class="analyticsGraphBox">
+      <div class="chartTitle">Data Stored (Last 30 Days)</div>
+      <div id="highchart-storage30d">
+        <div class="loading-bars">
+  <div class="loading-bar loading-bar1"></div>
+  <div class="loading-bar loading-bar2"></div>
+  <div class="loading-bar loading-bar3"></div>
+  <p class="">  </p>
+</div>
+      </div>
+    </div>
+
+    <div class="analyticsGraphBox">
+      <div class="chartTitle">Concurrent Users (Last 24 Hours)</div>
+      <div id="highchart-concurrents24h">
+        <div class="loading-bars">
+  <div class="loading-bar loading-bar1"></div>
+  <div class="loading-bar loading-bar2"></div>
+  <div class="loading-bar loading-bar3"></div>
+  <p class="">  </p>
+</div>
+      </div>
+    </div>
+
+    <div class="analyticsGraphBox">
+      <div class="chartTitle">Database I/O Capacity (Last 24 Hours)</div>
+      <div id="highchart-namespaceActor24h">
+        <div class="loading-bars">
+  <div class="loading-bar loading-bar1"></div>
+  <div class="loading-bar loading-bar2"></div>
+  <div class="loading-bar loading-bar3"></div>
+  <p class="">  </p>
+</div>
+      </div>
+    </div>
+
+    <div class="analyticsGraphBox">
+      <div class="chartTitle">Database Operations per Hour (Last 24 Hours)</div>
+      <div id="highchart-mongoOps24h">
+        <div class="loading-bars">
+  <div class="loading-bar loading-bar1"></div>
+  <div class="loading-bar loading-bar2"></div>
+  <div class="loading-bar loading-bar3"></div>
+  <p class="">  </p>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+</div><!-- #content -->
+
+
+
+
+<!-- TOUR MODAL -->
+<div id="tourModalStepOne" class="tourModalStepOne modal hide">
+  <div class="modal-header">
+    <h3>Welcome to Firebase Forge!</h3>
+  </div>
+  <div class="modal-body">
+    <p>
+      This is your graphical debugger for viewing and editing your Firebase data.
+      You can use Forge to:
+    </p>
+    <img class="right screenshot" src="./Firebase App Dashboard_files/tour_screenshot.png">
+    <ul class="left">
+      <li>Import / export your data</li>
+      <li>View usage metrics</li>
+      <li>Setup Security &amp; Rules</li>
+      <li>Configure Security &amp; Rules</li>
+    </ul>
+  </div>
+  <div class="modal-footer">
+    <button class="button button-flat-primary button-rounded tour-take">Take the tour »</button>
+    <button class="button button-flat button-rounded skip tour-skip">Skip Tour</button>
+  </div>
+</div>
+
+
+
+<!-- IMPORT MODAL -->
+<div id="importmodal" class="modal hide">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal" href="https://hackers-week.firebaseio.com/?page=Security#importmodal">x</a>
+    <h3>Import JSON Data</h3>
+  </div>
+
+  <div class="modal-body">
+    <div class="alert alert-error">Warning: This will overwrite all existing data at this location!</div>
+    <div id="upload-container" class="spacer-right-20 spacer-left-20 spacer-bottom-20">
+
+      <form id="import-form" method="POST" enctype="multipart/form-data">
+        <input id="import-file-input" type="file" name="upload" accept=".json">
+      </form>
+
+      <div id="import-loader" class="import-loader">
+        <div class="loading-bars">
+  <div class="loading-bar loading-bar1"></div>
+  <div class="loading-bar loading-bar2"></div>
+  <div class="loading-bar loading-bar3"></div>
+  <p class="hide">  </p>
+</div>
+      </div>
+
+    </div>
+    <div id="upload-error" class="warning hide right spacer-right-20"></div>
+  </div>
+
+
+  <div class="modal-footer">
+    <a href="https://hackers-week.firebaseio.com/?page=Security#" class="button button-rounded button-flat-primary" id="import-confirm">Import JSON</a>
+    <a href="https://hackers-week.firebaseio.com/?page=Security#" class="button button-rounded button-flat" id="import-cancel" data-dismiss="modal">Cancel</a>
+  </div>
+</div>
+
+
+<!-- AUTHENTICATION MODAL -->
+<div id="authenticationmodal" class="modal hide">
+  <div class="modal-header">
+    <h3>Authentication Required</h3>
+  </div>
+  <div class="modal-body">
+    You are not authorized to view this Firebase. <br><br> <a href="https://www.firebase.com/account/">Go to your user account</a> »
+  </div>
+</div>
+
+
+
+<!-- REMOVE MODAL -->
+<div id="removemodal" class="modal hide">
+  <div class="modal-header">
+    <h3>Remove <span id="removepath"></span>?</h3>
+  </div>
+  <div class="modal-body">
+    <span class="warning">Warning: This data will be deleted permanently.</span><br>
+    <span class="hint">Note: To prevent this dialog, hold down shift while clicking the remove icon.</span>
+  </div>
+  <div class="modal-footer">
+    <a href="https://hackers-week.firebaseio.com/?page=Security#" class="button button-rounded button-flat-caution remove" id="removeconfirm">Remove</a>
+    <a href="https://hackers-week.firebaseio.com/?page=Security#" class="button button-rounded button-flat cancel" data-dismiss="modal">Cancel</a>
+  </div>
+</div>
+
+
+
+<!-- DELETE SECRET MODAL -->
+<div id="delete-secret-modal" class="modal hide">
+  <div class="modal-header">
+    <h3>Remove Secret?</h3>
+  </div>
+  <div class="modal-body">
+    Removing this secret will invalidate all Firebase authentication tokens that were generated with this secret.
+    If you generated user tokens with this secret, they will no longer be valid. This is a permanent action.
+  </div>
+  <div class="modal-footer">
+    <a href="https://hackers-week.firebaseio.com/?page=Security#" class="button button-rounded button-flat-caution remove" id="delete-secret-confirm">I understand, permanently delete this secret.</a>
+    <a href="https://hackers-week.firebaseio.com/?page=Security#" class="button button-rounded button-flat cancel" data-dismiss="modal">Cancel</a>
+  </div>
+</div>
+
+
+
+<!-- DOMAIN REMOVE MODAL -->
+<div class="modal hide" id="domainRemoveModal">
+  <div class="modal-header">
+    <h3>Remove domain?</h3>
+  </div>
+  <div class="modal-body">
+    Are you sure you want to remove <strong class="domain-name"></strong>?
+  </div>
+  <div class="modal-footer">
+    <a href="https://hackers-week.firebaseio.com/?page=Security#" class="button button-rounded button-flat-caution remove">Remove</a>
+    <a href="https://hackers-week.firebaseio.com/?page=Security#" class="button button-rounded button-flat" data-dismiss="modal">Cancel</a>
+  </div>
+</div>
+
+
+
+<!-- EXPORT MODAL -->
+<div id="exportmodal" class="modal hide">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal" href="https://hackers-week.firebaseio.com/?page=Security#importmodal">x</a>
+    <h3>Export Data with Rest API</h3>
+  </div>
+  <div class="modal-body">
+    <p>Your data is too large to be exported via this interface.  If your data is under 256 MB, retreive your data with the <a href="https://www.firebase.com/docs/rest/guide/retrieving-data.html">REST API</a> by using a <code>GET</code> request with an auth parameter, where CREDENTIAL is either your Firebase Secret or an authentication token:</p>
+
+    <pre class="prettyprint linenums exportModalCode" id="exportViaRest">curl "https://hackers-week.firebaseio.com//.json?print=pretty&amp;auth=CREDENTIAL"</pre>
+
+    <p>If you data exceeds 256 MB, contact <a href="https://www.firebase.com/docs/help/">support</a> to discuss other options for retrieving your data.</p>
+
+  </div>
+  <div class="modal-footer">
+    <a href="https://www.firebase.com/docs/rest/guide/retrieving-data.html" class="button button-rounded button-flat-primary">View Rest API</a>
+    <a href="https://hackers-week.firebaseio.com/?page=Security#" class="button button-rounded button-flat" data-dismiss="modal">Cancel</a>
+  </div>
+</div>
+
+
+
+<!-- CONCURRENCE WARNING MODAL -->
+<div id="concurrence-warning" class="concurrence-limit-warning-modal modal hide">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">x</a>
+    <h3>Concurrent Limit Warning</h3>
+  </div>
+  <div class="modal-body">
+    <p class="alert alert-error">In the past 24 hours you have exceeded your database connection limit.</p>
+    <p class="concurrence-limit-modal-text">You've exceeded your current plan's limit for the number of devices that can be connected to your app at any one time, which means some of your users have not been able to access your application.</p>
+    <p class="concurrence-limit-modal-text">To ensure all your users can use your app, we recommend upgrading to a Candle plan (or larger), which has no connections limit.</p>
+  </div>
+  <div class="modal-footer">
+    <a href="https://hackers-week.firebaseio.com/?page=Security#" id="concurrence-upgrade-button" class="button button-rounded button-flat-attention">Upgrade App</a>
+    <a href="https://hackers-week.firebaseio.com/?page=Security#" class="button button-rounded button-flat" data-dismiss="modal">Don't Upgrade</a>
+  </div>
+</div>
+
+
+<!-- ADD AUTH USER MODAL -->
+<div id="add-user" class="add-user-modal modal hide">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">x</a>
+    <h3>Add User</h3>
+  </div>
+
+  <div class="modal-body">
+    <input type="text" id="add-user-email" class="forge-textbox" placeholder="Email">
+    <input type="password" id="add-user-password" class="forge-textbox" placeholder="Password">
+    <div id="add-user-alert" class="add-user-error"></div>
+  </div>
+
+  <div class="modal-footer">
+    <button id="add-user-submit" class=" button button-rounded button-flat-attention">Add User</button>
+    <a href="https://hackers-week.firebaseio.com/?page=Security#" class="button button-rounded button-flat" data-dismiss="modal">Cancel</a>
+  </div>
+</div>
+
+<!-- DELETE AUTH USER MODAL -->
+<div id="delete-user" class="delete-user-modal modal hide">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">x</a>
+    <h3>Delete User</h3>
+  </div>
+
+  <div class="modal-body">
+    <div class="delete-user-alert alert alert-error"></div>
+  </div>
+
+  <div class="modal-footer">
+    <button id="delete-user-submit" class="button button-rounded button-flat-caution">Delete User</button>
+    <a href="https://hackers-week.firebaseio.com/?page=Security#" class="button button-rounded button-flat" data-dismiss="modal">Cancel</a>
+  </div>
+</div>
+<div class="ReactModalPortal"><div data-reactid=".3"></div></div></body></html>
