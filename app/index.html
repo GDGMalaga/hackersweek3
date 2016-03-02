@@ -61,7 +61,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <body unresolved>
   <span id="browser-sync-binding"></span>
-  
+
   <template is="dom-bind" id="app">
 
     <paper-drawer-panel id="paperDrawerPanel">
@@ -80,9 +80,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <span>Home</span>
           </a>
 
-          <a data-route="users" href="{{baseUrl}}users">
+          <a data-route="como-llegar" href="{{baseUrl}}como-llegar">
             <iron-icon icon="info"></iron-icon>
-            <span>Users</span>
+            <span>Cómo llegar</span>
+          </a>
+
+          <a data-route="hackathon" href="{{baseUrl}}hackathon">
+            <iron-icon icon="info"></iron-icon>
+            <span>Hackathon</span>
           </a>
 
           <a data-route="contact" href="{{baseUrl}}contact">
@@ -122,21 +127,37 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <div class="content">
           <iron-pages attr-for-selected="data-route" selected="{{route}}">
             <section data-route="home">
-              
+
               <app-data
                 location="[[firebaseURL]]"
                 eventos="{{eventos}}"></app-data>
-                
+
               <ag-enda
                 eventos="{{eventos}}"></ag-enda>
 
             </section>
 
-            
 
-            <section data-route="users">
-              
+
+            <section data-route="como-llegar">
+              <google-map latitude="36.715233" longitude="-4.477952" fit-to-markers>
+                <google-map-marker latitude="36.715233" longitude="-4.477952"
+                    draggable="true" title="Hackers Week"></google-map-marker>
+              </google-map>
             </section>
+
+            <section data-route="hackathon">
+              <center><iron-image src="images/hackathon_logo.png" width="300" height="300" sizing="cover"></iron-image></center>
+              <paper-material>Para la hackathon de ésta Hackers Week 3.0, organizado por el <b>GDG Málaga</b>, en el que tú y tu equipo tendréis que crear una aplicación web/móvil haciendo uso de Firebase.<br><br>
+                  El objetivo de éste año es entregar a los concursantes material (simple de usar y de seguir) para crear aplicaciones de calidad, haciendo uso de Firebase, Polymer y Android. Es de temática totalmente libre y el único requisito es usar Firebase, pero con los talleres, charlas y materiales que os aportaremos, es una muy buena oportunidad para aprender éstas tecnologías de Google.<br>
+                  ¡Apúntate, disfruta, aprende y gana grandes premios!<br>
+                  <br>
+                  <a href="https://goo.gl/IOrUDt">Bases del concurso</a>
+                  <br>
+                  <a href="http://goo.gl/forms/901EMXAxqj">Formulario de inscripción</a>
+                </paper-material>
+            </section>
+
 
             <section data-route="user-info">
               <paper-material elevation="1">
