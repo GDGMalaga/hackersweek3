@@ -1,0 +1,92 @@
+<!--
+A comment describing this element
+
+Example:
+
+    <my-elem></my-elem>
+
+Example:
+
+    <my-elem>
+      <h2>Hello my-elem</h2>
+    </my-elem>
+
+@demo demo/index.html
+-->
+
+<link rel="import" href="../../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../../bower_components/iron-icons/device-icons.html">
+<link rel="import" href="../../bower_components/iron-icons/maps-icons.html">
+<link rel="import" href="../../bower_components/iron-icons/social-icons.html">
+<link rel="import" href="../../bower_components/iron-icons/notification-icons.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+
+<dom-module id="ev-ento">
+	<template>
+		<style>
+			:host {
+				display: block;
+			}
+			paper-material{
+				background-color: white;
+				color: black;
+				padding: 20px;
+
+			}
+			.conferenciante {
+				color:#002D32;
+				font-weight: 100;
+				display: inline-block;
+			}
+			.descr {
+				font-size: 16px;
+				padding: 0 10px;
+				font-weight: 100;
+				line-height: 36px;
+			}
+			.titulo {
+				font-family: 'Roboto', sans-serif;
+				font-size: 24px;
+				font-weight: 100;
+				line-height: 24px;
+				letter-spacing: -0.02em;
+			}
+			a {
+				text-decoration: none;
+				color: black;
+			}
+
+			paper-button.hw {
+
+				 background-color: var(--paper-indigo-900);
+				 color: white;
+				 --paper-button-raised-keyboard-focus: {
+				      background-color: var(--paper-pink-a200) !important;
+				      color: white !important;
+				 };
+			}
+
+		</style>
+
+		<paper-material elevation="1">
+                <div class="titulo">{{evento.titulo}}</div> <br>
+								<div class="conferenciante"><iron-icon icon="social:person-outline"></iron-icon> {{evento.autor}}
+								<iron-icon icon="device:access-time"></iron-icon> {{evento.hora}}  <iron-icon icon="maps:place"></iron-icon> {{evento.lugar}} </div>
+                <div class="descr"><p>{{evento.descripcion}}</p></div>
+		<center><iron-icon icon="notification:event-note"></iron-icon> <a href="http://{{evento.entrada}}"><paper-button raised class="hw">Saca tus entradas</paper-button></a></center>
+								<hr>
+								<iron-icon icon="icons:info"></iron-icon> <div class="conferenciante">Biografía</div>
+								<br>
+								<div class="descr"><p>{{evento.biografia}}</p></div>
+        </paper-material>
+
+	</template>
+	<script>
+Polymer({
+  is: 'ev-ento',
+  properties: {
+    evento: Object
+  }
+});
+	</script>
+</dom-module>

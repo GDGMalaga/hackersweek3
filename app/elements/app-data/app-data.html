@@ -1,0 +1,71 @@
+<!--
+A comment describing this element
+
+Example:
+
+    <my-elem></my-elem>
+
+Example:
+
+    <my-elem>
+      <h2>Hello my-elem</h2>
+    </my-elem>
+
+@demo demo/index.html
+-->
+<link rel="import" href="../../bower_components/firebase-element/firebase-collection.html">
+
+<link rel="import" href="../../bower_components/iron-localstorage/iron-localstorage.html">
+
+<dom-module id="app-data">
+    <template>
+        <style>
+            :host {
+                display: block;
+            }
+        </style>
+        <firebase-collection
+            location="{{location}}"
+            data="{{fbEventos}}"
+            on-firebase-value="_firebaseLoaded">
+        </firebase-collection>
+
+        <iron-localstorage name="hackers-week"
+                       on-iron-localstorage-load="_backupLoaded"
+                       value="{{lsEventos}}">
+        </iron-localstorage>
+        
+    </template>
+    <script>
+Polymer({
+  is: 'app-data',
+  properties: {
+    fbEventos: {
+      type: Array
+    },
+    eventos: {
+      type: Array,
+      notify: true,
+      value: [
+        [
+          []
+        ]
+      ]
+    },
+    _firebaseConnected: {
+      value: false
+    }
+  },
+  _firebaseLoaded: function() {
+    this._firebaseConnected = true;
+    this.eventos = this.fbEventos;
+    this.lsEventos = this.fbEventos;
+  },
+  _backupLoaded: function() {
+    if (!this._firebaseConnected) {
+      this.eventos = this.lsEventos.slice();
+    }
+  }
+});
+    </script>
+</dom-module>

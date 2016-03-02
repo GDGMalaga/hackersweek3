@@ -1,0 +1,87 @@
+<!--
+A comment describing this element
+  
+Example:
+
+    <my-elem></my-elem>
+
+Example:
+
+    <my-elem>
+      <h2>Hello my-elem</h2>
+    </my-elem>
+
+@demo demo/index.html
+-->
+<link rel="import" href="../../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../ev-ento/ev-ento.html">
+
+<dom-module id="ag-enda">
+	<template>
+		<style>
+			:host {
+				display: block;
+			}
+			paper-tabs{
+				background-color: #0A455D;
+        		color: #fff;
+			}
+			ev-ento{
+				margin-top: 15px;
+			}
+		</style>
+
+	<paper-tabs 
+		selected="{{eventType}}"
+		on-iron-select="_updateDisplayed">
+	    <paper-tab>Conferencia</paper-tab>
+	    <paper-tab>Taller</paper-tab>
+	</paper-tabs>
+	<paper-tabs 
+		selected="{{day}}"
+		on-iron-select="_updateDisplayed">
+	    <paper-tab>Lunes</paper-tab>
+	    <paper-tab>Martes</paper-tab>
+	    <paper-tab>Miércoles</paper-tab>
+	    <paper-tab>Jueves</paper-tab>
+	</paper-tabs>
+
+	<template is="dom-repeat"
+              items="{{displayed}}"
+              as="evento">
+      
+      <ev-ento
+        evento="{{evento}}"></ev-ento>
+    </template>
+
+		
+	</template>
+	<script>
+Polymer({
+  is: 'ag-enda',
+  properties: {
+    day: {
+      type: Number,
+      value: 0
+    },
+    eventType: {
+      type: Number,
+      value: 0
+    },
+    eventos: {
+      type: Array,
+      observer: '_eventsChanged'
+    },
+    displayed: {
+      type: Array
+    }
+  },
+  _eventsChanged: function() {
+    this._updateDisplayed();
+  },
+  _updateDisplayed: function() {
+    this.displayed = this.eventos[this.eventType][this.day];
+  }
+});
+	</script>
+</dom-module>
