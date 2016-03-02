@@ -3,23 +3,26 @@ A comment describing this element
 
 Example:
 
-    <my-elem></my-elem>
+    <ev-ento></ev-ento>
 
 Example:
 
-    <my-elem>
-      <h2>Hello my-elem</h2>
-    </my-elem>
+    <ev-ento></ev-ento>
 
 @demo demo/index.html
 -->
 
-<link rel="import" href="../../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+
 <link rel="import" href="../../bower_components/iron-icons/device-icons.html">
 <link rel="import" href="../../bower_components/iron-icons/maps-icons.html">
+<link rel="import" href="../../bower_components/iron-icons/hardware-icons.html">
 <link rel="import" href="../../bower_components/iron-icons/social-icons.html">
 <link rel="import" href="../../bower_components/iron-icons/notification-icons.html">
+<link rel="import" href="../../bower_components/iron-collapse/iron-collapse.html">
+
 <link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
 
 <dom-module id="ev-ento">
 	<template>
@@ -27,65 +30,61 @@ Example:
 			:host {
 				display: block;
 			}
-			paper-material{
-				background-color: white;
-				color: black;
-				padding: 20px;
-
-			}
-			.conferenciante {
-				color:#002D32;
-				font-weight: 100;
-				display: inline-block;
-			}
-			.descr {
-				font-size: 16px;
-				padding: 0 10px;
-				font-weight: 100;
-				line-height: 36px;
-			}
-			.titulo {
-				font-family: 'Roboto', sans-serif;
-				font-size: 24px;
-				font-weight: 100;
-				line-height: 24px;
-				letter-spacing: -0.02em;
-			}
-			a {
-				text-decoration: none;
-				color: black;
-			}
-
-			paper-button.hw {
-
-				 background-color: var(--paper-indigo-900);
-				 color: white;
-				 --paper-button-raised-keyboard-focus: {
-				      background-color: var(--paper-pink-a200) !important;
-				      color: white !important;
-				 };
-			}
-
+			.autor { 
+		  	
+		  }
+		  .text-light { color: var(--paper-grey-600); }
+		  .get-ticket { 
+		  	color: white; 
+		  	background-color: #0097B7;
+		  }
+		  paper-card .title-text {
+		      background: var(--paper-cyan-500);
+		   }
 		</style>
 
-		<paper-material elevation="1">
-                <div class="titulo">{{evento.titulo}}</div> <br>
-								<div class="conferenciante"><iron-icon icon="social:person-outline"></iron-icon> {{evento.autor}}
-								<iron-icon icon="device:access-time"></iron-icon> {{evento.hora}}  <iron-icon icon="maps:place"></iron-icon> {{evento.lugar}} </div>
-                <div class="descr"><p>{{evento.descripcion}}</p></div>
-		<center><iron-icon icon="notification:event-note"></iron-icon> <a href="http://{{evento.entrada}}"><paper-button raised class="hw">Saca tus entradas</paper-button></a></center>
-								<hr>
-								<iron-icon icon="icons:info"></iron-icon> <div class="conferenciante">Biografía</div>
-								<br>
-								<div class="descr"><p>{{evento.biografia}}</p></div>
-        </paper-material>
 
+		<paper-card heading="{{evento.titulo}}" class="cyan">
+		  <div class="card-content">
+	      <div class="autor">por {{evento.autor}}
+			<paper-icon-button
+				id="iconButton"
+                icon="hardware:keyboard-arrow-up"
+                title="more info"
+                on-tap="_toggle">
+              </paper-icon-button>
+	      </div>
+          <iron-collapse id="moreInfo" style="padding-top:6px; width:100%;">
+            {{evento.biografia}}
+          </iron-collapse>
+	      <p class="text-light">
+			{{evento.descripcion}}
+	      </p>
+
+	      <p>
+			<iron-icon icon="device:access-time"></iron-icon>
+	        <span>{{evento.hora}}</span>
+	      	<iron-icon icon="maps:place"></iron-icon> 
+	      	<span>{{evento.lugar}}
+	      </p>
+	    </div>
+	    <div class="card-actions">
+	    	<a href="{{evento.entrada}}" target="_blank">
+	      		<paper-button class="get-ticket">Obtén tu entrada</paper-button>
+	      	</a>
+	    </div>
+	  </paper-card>
 	</template>
 	<script>
 Polymer({
   is: 'ev-ento',
   properties: {
     evento: Object
+  },
+  _toggle : function(){
+    var moreInfo = this.$.moreInfo;
+    this.$.iconButton.icon = moreInfo.opened ? 'hardware:keyboard-arrow-up': 'hardware:keyboard-arrow-down';
+    moreInfo.toggle();
   }
 });
 	</script>
