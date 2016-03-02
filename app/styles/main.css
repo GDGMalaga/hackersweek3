@@ -17,3 +17,11 @@ body {
 	background-color: #192D35;
 	color: #E4E4E4;
 }
+
+
+  /* mobile-small */
+  @media all and (min-width: 0) and (max-width: 600px) { 
+	#logoHackers{
+		width: 87%;
+	}
+  }
