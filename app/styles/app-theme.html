@@ -26,7 +26,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   :root {
     --primary-text-color: #212121;
-    --primary-background-color: #ffffff;
+    --primary-background-color: #fff;
     --secondary-text-color: #737373;
     --disabled-text-color: #9b9b9b;
     --divider-color: #dbdbdb;
@@ -36,16 +36,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     --accent-color: #ff4081;
     --light-accent-color: #ff80ab;
     --dark-accent-color: #f50057;
-
     /* Components */
 
     /* paper-drawer-panel */
     --drawer-menu-color: #ffffff;
+    --paper-drawer-panel-left-drawer-container: {
+      background-color: #003F4D;
+    };
     --drawer-border-color: 1px solid #ccc;
     --drawer-toolbar-border-color: 1px solid rgba(0, 0, 0, 0.22);
 
     /* paper-menu */
-    --paper-menu-background-color: #fff;
+    --paper-menu-background-color: #003F4D;
+    --paper-menu-color: #fff;
     --menu-link-color: #111111;
   }
 
@@ -61,8 +64,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   }
 
   #drawerToolbar {
-    color: var(--secondary-text-color);
-    background-color: var(--drawer-menu-color);
+    color: white;
+    background-color: #003F4D;
     border-bottom: var(--drawer-toolbar-border-color);
   }
 
@@ -76,9 +79,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   paper-menu {
     --paper-menu-selected-item: {
-      color: var(--primary-color);
+      color: #009FC3;
     }
-
     --paper-menu-focused-item-after: {
       background: var(--primary-color);
     }
@@ -94,7 +96,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     @apply(--layout-center);
 
     text-decoration: none;
-    color: var(--menu-link-color);
+    color: white;
     font-family: 'Roboto', 'Noto', sans-serif;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
