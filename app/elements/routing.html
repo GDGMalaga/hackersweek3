@@ -53,6 +53,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       app.route = 'hackathon';
     });
 
+    page('/recogida-cv', function(){
+      app.route = 'recogida-cv';
+    });
+
     page('/users/:name', function(data) {
       app.route = 'user-info';
       app.params = data.params;
