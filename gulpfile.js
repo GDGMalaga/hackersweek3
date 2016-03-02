@@ -219,7 +219,7 @@ gulp.task('serve', ['styles', 'elements'], function() {
   browserSync({
     port: 5000,
     notify: false,
-    logPrefix: 'PSK',
+    logPrefix: 'HW',
     snippetOptions: {
       rule: {
         match: '<span id="browser-sync-binding"></span>',
@@ -249,7 +249,7 @@ gulp.task('serve:dist', ['default'], function() {
   browserSync({
     port: 5001,
     notify: false,
-    logPrefix: 'PSK',
+    logPrefix: 'HW',
     snippetOptions: {
       rule: {
         match: '<span id="browser-sync-binding"></span>',
