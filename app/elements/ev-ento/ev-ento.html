@@ -73,7 +73,7 @@ Example:
 	    </div>
 	    <div class="card-actions">
 	    	<a href="{{evento.entrada}}" target="_blank">
-	      		<paper-button class="get-ticket">Obtén tu entrada</paper-button>
+	      		<paper-button on-tap="_getTicket" class="get-ticket">Obtén tu entrada</paper-button>
 	      	</a>
 	    </div>
 	  </paper-card>
@@ -88,6 +88,15 @@ Polymer({
     var moreInfo = this.$.moreInfo;
     this.$.iconButton.icon = moreInfo.opened ? 'hardware:keyboard-arrow-up': 'hardware:keyboard-arrow-down';
     moreInfo.toggle();
+  },
+  _getTicket: function(){
+  	if (window.hasOwnProperty('ga')){
+  	  window.ga('send', {
+	  	hitType: 'event',
+	    eventAction: 'get-tickets',
+	    eventLabel: this.evento.titulo
+	  });
+  	}
   }
 });
 	</script>
