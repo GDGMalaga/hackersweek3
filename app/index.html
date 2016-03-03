@@ -57,6 +57,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <!-- For shared styles, shared-styles.html import in elements.html -->
   <style is="custom-style" include="shared-styles"></style>
+
+  <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45381230-2', 'auto');
+  </script>
 </head>
 
 <body unresolved>
@@ -145,7 +154,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 Se puede venir fácilmente en autobús desde el centro de la ciudad en las <a href="http://www.emtmalaga.es/emt-classic/home.html">líneas 8, 11 o 25 de la EMT</a>, que tienen parada en la Alameda Principal. A ella es rápido llegar desde la <a href="http://www.estabus.emtsam.es/">Estación de Autobuses</a>, la estación de tren Málaga-María Zambrano o la estación Málaga Centro-Alameda, donde paran las <a href="http://www.renfe.com/viajeros/cercanias/malaga/">líneas C-1 y C-2 de Cercanías</a>.<br><br>
                 También es posible venir mediante la <a href="http://metromalaga.es/">línea 1 del Metro de Málaga</a> (parada Clínico), que tiene intercambio en la estación Perchel con la Estación de tren Málaga-María Zambrano y la <a href="http://www.estabus.emtsam.es/">Estación de Autobuses</a>.</p>
               </paper-material>
-              <google-map latitude="36.715233" longitude="-4.477952" fit-to-markers style="height:600px;" zoom=16>
+              <google-map 
+                latitude="36.715233" 
+                longitude="-4.477952" 
+                fit-to-markers style="height:600px;" 
+                zoom="16"
+                api-key="AIzaSyBKX9BGtCV-D2Y5Tx-2vDqLtax6gvvW7sU">
                 <google-map-marker latitude="36.715233" longitude="-4.477952"
                     draggable="true" title="Hackers Week"></google-map-marker>
               </google-map>
