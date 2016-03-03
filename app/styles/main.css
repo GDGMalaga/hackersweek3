@@ -24,6 +24,11 @@ body {
 }
 
 
+#mainToolbar .bottom-container{
+  font-size: 14px !important;
+}
+
+
   /* mobile-small */
   @media all and (min-width: 0) and (max-width: 600px) { 
 	#logoHackers{
