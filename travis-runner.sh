@@ -42,7 +42,7 @@ then
     rm firebase.json
   }
 
-  deploy_ghpages
+  #deploy_ghpages
   deploy_firebase
 
   # Revert to orginal index.html and delete temp file
