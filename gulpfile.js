@@ -219,7 +219,7 @@ gulp.task('serve', ['styles', 'elements'], function() {
   browserSync({
     port: 5000,
     notify: false,
-    logPrefix: 'HW',
+    logPrefix: 'PSK',
     snippetOptions: {
       rule: {
         match: '<span id="browser-sync-binding"></span>',
@@ -249,7 +249,7 @@ gulp.task('serve:dist', ['default'], function() {
   browserSync({
     port: 5001,
     notify: false,
-    logPrefix: 'HW',
+    logPrefix: 'PSK',
     snippetOptions: {
       rule: {
         match: '<span id="browser-sync-binding"></span>',
@@ -274,7 +274,7 @@ gulp.task('default', ['clean'], function(cb) {
     ['ensureFiles', 'copy', 'styles'],
     'elements',
     ['images', 'fonts', 'html'],
-    'vulcanize', 'cache-config',
+    'vulcanize', // 'cache-config',
     cb);
 });
 
@@ -300,7 +300,7 @@ gulp.task('deploy-gh-pages', function() {
 
 // Load tasks for web-component-tester
 // Adds tasks for `gulp test:local` and `gulp test:remote`
-// require('web-component-tester').gulp.init(gulp);
+require('web-component-tester').gulp.init(gulp);
 
 // Load custom tasks from the `tasks` directory
 try {
