@@ -43,6 +43,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     page('/', function() {
       app.route = 'home';
+      app.eventKind = 0;
+      app.eventDay = 0;
+    });
+
+
+    page('/:e/:d/', function(data) {
+      app.route = 'home';
+      app.eventKind = (data.params.e>2?2:data.params.e);
+      app.eventDay = (data.params.d>3?2:data.params.d);
     });
 
     page(app.baseUrl, function() {

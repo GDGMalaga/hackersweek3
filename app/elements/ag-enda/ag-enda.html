@@ -33,7 +33,7 @@ Example:
 		</style>
 
 	<paper-tabs
-		selected="{{eventType}}"
+		selected="{{kind}}"
 		on-iron-select="_updateDisplayed">
 	    <paper-tab>Conferencias</paper-tab>
 	    <paper-tab>Talleres</paper-tab>
@@ -66,7 +66,7 @@ Polymer({
       type: Number,
       value: 0
     },
-    eventType: {
+    kind: {
       type: Number,
       value: 0
     },
@@ -82,7 +82,7 @@ Polymer({
     this._updateDisplayed();
   },
   _updateDisplayed: function() {
-    this.displayed = this.eventos[this.eventType][this.day];
+    this.displayed = this.eventos[this.kind][this.day];
   }
 });
 	</script>
